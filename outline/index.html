@@ -3,45 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡 Blue Sky Coffee - 專為手沖咖啡愛好者打造的頂級單品咖啡豆品牌。精選莊園級微批次高階咖啡豆，讓每一杯手沖都純淨透澈。">
-  <title>藍天咖啡 Blue Sky Coffee ｜ 高階手沖精品咖啡豆專門</title>
-  
+  <meta name="description" content="可愛庫洛米手作工坊 - 專為喜愛庫洛米的愛好者打造的平價親民手作好物。提供奶油膠、串珠飾品、毛線鉤織與新手DIY材料包，甜酷黑紫風，吸引每位粉絲把可愛帶回家！">
+  <title>可愛庫洛米 ｜ 庫洛米愛好者的平價手作好物專門店</title>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================================
-       CSS Variables & Base Reset
+       CSS Variables - 黑色與紫色系 (Kuromi Sweet-Punk Aesthetic)
        ========================================================================== */
     :root {
-      --primary-navy: #091a2e;      /* 深海深藍 - 沉穩高端背景 */
-      --primary-blue: #0f3d69;      /* 品牌經典藍 */
-      --sky-blue: #38bdf8;          /* 晴空亮天藍 - 強調與亮點 */
-      --sky-light: #e0f2fe;         /* 輕盈天藍霧色 */
-      --accent-gold: #f59e0b;       /* 咖啡烘焙琥珀金 */
-      --accent-gold-hover: #d97706; /* 深琥珀金 */
+      /* 主色系：黑紫龐克甜酷 */
+      --color-black-pure: #0b0712;
+      --color-black-deep: #130f1c;
+      --color-black-card: #1c162b;
+      --color-black-card-hover: #261f38;
       
-      --bg-white: #ffffff;
-      --bg-light: #f8fafc;
-      --bg-surface: #f1f5f9;
-      --border-color: #e2e8f0;
+      --color-purple-dark: #3b1764;
+      --color-purple-primary: #8b5cf6;
+      --color-purple-vivid: #a855f7;
+      --color-purple-glow: #c084fc;
+      --color-purple-light: #f3e8ff;
+      --color-purple-subtle: #2d2244;
       
-      --text-dark: #0f172a;         /* 深色文字 */
-      --text-muted: #64748b;        /* 次要文字 */
-      --text-light: #f8fafc;        /* 淺色文字 */
+      --color-pink-accent: #f43f5e;
+      --color-pink-light: #ffe4e6;
+      --color-gold-accent: #fbbf24;
+
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-sub: #94a3b8;
+      --border-color: rgba(168, 85, 247, 0.22);
+      --border-hover: rgba(192, 132, 252, 0.6);
       
-      --font-serif: "Noto Serif TC", serif;
-      --font-sans: "Noto Sans TC", sans-serif;
-      --font-display: "Cinzel", serif;
-      
-      --shadow-sm: 0 2px 8px rgba(9, 26, 46, 0.06);
-      --shadow-md: 0 10px 30px rgba(9, 26, 46, 0.08);
-      --shadow-lg: 0 20px 45px rgba(9, 26, 46, 0.14);
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 20px;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+
+      --font-main: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+      --font-display: 'Fredoka', 'Zen Maru Gothic', cursive, sans-serif;
+
+      --shadow-purple: 0 10px 25px -5px rgba(168, 85, 247, 0.3);
+      --shadow-pink: 0 10px 25px -5px rgba(244, 63, 94, 0.3);
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -57,12 +64,15 @@
     }
 
     body {
-      font-family: var(--font-sans);
-      color: var(--text-dark);
-      background-color: var(--bg-light);
+      font-family: var(--font-main);
+      background-color: var(--color-black-deep);
+      color: var(--text-main);
       line-height: 1.7;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(244, 63, 94, 0.08) 0%, transparent 40%);
+      background-attachment: fixed;
     }
 
     a {
@@ -79,198 +89,117 @@
       transition: var(--transition);
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
+    ul {
+      list-style: none;
     }
 
     .container {
-      width: min(1200px, calc(100% - 48px));
+      width: min(1200px, calc(100% - 40px));
       margin: 0 auto;
     }
 
-    .section {
-      padding: 100px 0;
-    }
-
-    /* Headings & Texts */
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      color: var(--sky-blue);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 24px;
-      height: 2px;
-      background-color: var(--sky-blue);
-    }
-
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 3.8vw, 2.85rem);
-      font-weight: 700;
-      color: var(--primary-navy);
-      line-height: 1.35;
-      margin-bottom: 20px;
-      letter-spacing: 0.02em;
-    }
-
-    .section-desc {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 620px;
-      line-height: 1.8;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border-radius: var(--radius-sm);
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-gold {
-      background-color: var(--accent-gold);
-      color: var(--primary-navy);
-    }
-    .btn-gold:hover {
-      background-color: var(--accent-gold-hover);
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
-    }
-
-    .btn-blue {
-      background-color: var(--primary-blue);
-      color: #ffffff;
-    }
-    .btn-blue:hover {
-      background-color: #0b2d4f;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(15, 61, 105, 0.3);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid rgba(255, 255, 255, 0.6);
-      color: #ffffff;
-    }
-    .btn-outline:hover {
-      background-color: rgba(255, 255, 255, 0.12);
-      border-color: #ffffff;
-      transform: translateY(-2px);
-    }
-
     /* ==========================================================================
-       Header & Navbar
+       Header & Navigation
        ========================================================================== */
     .site-header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+      height: 75px;
       z-index: 1000;
-      background: rgba(9, 26, 46, 0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      transition: var(--transition);
+      background: rgba(19, 15, 28, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
     }
 
-    .navbar {
+    .header-nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      width: 100%;
     }
 
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      font-size: 1.35rem;
+      font-weight: 900;
       color: #fff;
+      letter-spacing: 0.02em;
     }
 
-    .brand-icon {
+    .brand-icon-box {
       width: 42px;
       height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--sky-blue), var(--primary-blue));
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, #1f1235, #4c1d95);
+      border: 1px solid var(--color-purple-vivid);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
     }
 
-    .brand-text h1 {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      letter-spacing: 0.12em;
-      margin: 0;
-      line-height: 1.1;
+    .brand-title {
+      display: flex;
+      flex-direction: column;
     }
 
-    .brand-text span {
+    .brand-title .main-name {
       font-family: var(--font-display);
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
-      color: var(--sky-blue);
-      display: block;
-      margin-top: 3px;
+      background: linear-gradient(90deg, #ffffff, #e9d5ff, #f43f5e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
     }
 
-    .nav-menu {
+    .brand-title .sub-name {
+      font-size: 0.72rem;
+      color: var(--color-purple-glow);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+    }
+
+    .nav-links {
       display: flex;
       align-items: center;
-      list-style: none;
-      gap: 32px;
+      gap: 28px;
     }
 
     .nav-link {
-      color: rgba(255, 255, 255, 0.82);
       font-size: 0.95rem;
       font-weight: 500;
+      color: var(--text-muted);
       position: relative;
       padding: 6px 0;
     }
 
+    .nav-link:hover, .nav-link.active {
+      color: #fff;
+    }
+
     .nav-link::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--sky-blue);
+      background: linear-gradient(90deg, var(--color-purple-vivid), var(--color-pink-accent));
       transition: width 0.3s ease;
-    }
-
-    .nav-link:hover {
-      color: #ffffff;
+      border-radius: 2px;
     }
 
     .nav-link:hover::after {
       width: 100%;
     }
 
-    .nav-actions {
+    .header-actions {
       display: flex;
       align-items: center;
       gap: 16px;
@@ -278,223 +207,359 @@
 
     .cart-btn {
       position: relative;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: var(--color-purple-subtle);
+      border: 1px solid var(--color-purple-vivid);
       color: #fff;
-      padding: 10px 16px;
-      border-radius: var(--radius-sm);
+      padding: 9px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.9rem;
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.25);
     }
 
     .cart-btn:hover {
-      background: rgba(255, 255, 255, 0.18);
+      background: var(--color-purple-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.45);
     }
 
     .cart-badge {
-      background: var(--accent-gold);
-      color: var(--primary-navy);
+      background: var(--color-pink-accent);
+      color: #fff;
       font-size: 0.75rem;
       font-weight: 700;
       padding: 2px 7px;
       border-radius: 10px;
+      line-height: 1;
     }
 
-    .mobile-toggle {
+    .mobile-menu-btn {
       display: none;
       background: transparent;
       color: #fff;
-      font-size: 1.6rem;
-      padding: 6px;
+      font-size: 1.5rem;
+      padding: 4px;
     }
 
     /* ==========================================================================
        Hero Section
        ========================================================================== */
-    .hero {
+    .hero-section {
+      padding: 140px 0 90px;
       position: relative;
-      background: radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.15), transparent 45%),
-                  linear-gradient(135deg, #061525 0%, var(--primary-navy) 60%, #0c2b4c 100%);
-      color: #ffffff;
-      padding-top: 170px;
-      padding-bottom: 120px;
       overflow: hidden;
     }
 
-    .hero-glow {
+    .hero-bg-accent {
       position: absolute;
-      top: -150px;
+      top: -100px;
       right: -100px;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
-      filter: blur(80px);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, transparent 70%);
+      filter: blur(60px);
       pointer-events: none;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 60px;
+      gap: 50px;
       align-items: center;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid var(--color-purple-vivid);
+      color: var(--color-purple-glow);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 20px;
+    }
+
+    .hero-tag .tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-pink-accent);
+      box-shadow: 0 0 8px var(--color-pink-accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
     }
 
     .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
       font-weight: 900;
       line-height: 1.25;
-      letter-spacing: 0.04em;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
     }
 
-    .hero-title span.highlight {
-      color: var(--sky-blue);
-      position: relative;
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #f5d0fe, #c084fc, #f43f5e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .hero-subtitle {
-      font-size: 1.15rem;
-      color: rgba(255, 255, 255, 0.85);
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
       line-height: 1.85;
-      margin-bottom: 36px;
-      max-width: 540px;
+      margin-bottom: 32px;
+      max-width: 560px;
     }
 
     .hero-cta-group {
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
 
-    .hero-stats {
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-purple-primary), #6d28d9);
+      color: #fff;
+      box-shadow: var(--shadow-purple);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--color-purple-vivid), #7c3aed);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(168, 85, 247, 0.45);
+    }
+
+    .btn-pink {
+      background: linear-gradient(135deg, var(--color-pink-accent), #e11d48);
+      color: #fff;
+      box-shadow: var(--shadow-pink);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-pink:hover {
+      background: linear-gradient(135deg, #fb7185, #f43f5e);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(244, 63, 94, 0.45);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: rgba(168, 85, 247, 0.15);
+      border-color: var(--color-purple-glow);
+      transform: translateY(-3px);
+    }
+
+    .hero-features-bar {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      padding-top: 32px;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
     }
 
-    .stat-item h3 {
-      font-family: var(--font-display);
-      font-size: 1.75rem;
-      color: var(--sky-blue);
-      margin-bottom: 4px;
+    .hero-feat-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .stat-item p {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.7);
+    .hero-feat-icon {
+      font-size: 1.25rem;
+      color: var(--color-purple-glow);
     }
 
-    /* Hero Visual Card */
-    .hero-visual {
-      position: relative;
-      z-index: 2;
+    .hero-feat-text strong {
+      display: block;
+      font-size: 0.9rem;
+      color: #fff;
     }
 
-    .hero-glass-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    .hero-feat-text span {
+      font-size: 0.76rem;
+      color: var(--text-sub);
+    }
+
+    /* Hero Kuromi Mascot Card */
+    .hero-card {
+      background: linear-gradient(160deg, rgba(38, 31, 56, 0.95), rgba(19, 15, 28, 0.95));
+      border: 2px solid var(--color-purple-vivid);
       border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
-      position: relative;
+      padding: 36px 30px;
       text-align: center;
+      position: relative;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(168, 85, 247, 0.15);
+      animation: floatHero 5s ease-in-out infinite;
     }
 
-    .dripper-svg {
-      width: 220px;
-      height: 220px;
-      margin: 0 auto 20px;
-      filter: drop-shadow(0 15px 25px rgba(56, 189, 248, 0.25));
-      animation: float 4s ease-in-out infinite;
-    }
-
-    @keyframes float {
+    @keyframes floatHero {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-10px); }
     }
 
-    .badge-float {
+    .hero-badge-ribbon {
       position: absolute;
-      top: 25px;
-      right: -15px;
-      background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover));
-      color: var(--primary-navy);
+      top: -14px;
+      right: 25px;
+      background: linear-gradient(135deg, var(--color-pink-accent), #ec4899);
+      color: #fff;
       font-weight: 700;
       font-size: 0.8rem;
-      padding: 8px 16px;
-      border-radius: 30px;
-      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4);
       letter-spacing: 0.05em;
     }
 
-    .dripper-status {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 6px;
+    .kuromi-art {
+      width: 190px;
+      height: 190px;
+      margin: 10px auto 20px;
+      filter: drop-shadow(0 12px 25px rgba(168, 85, 247, 0.45));
     }
 
-    .dripper-sub {
-      font-size: 0.85rem;
-      color: var(--sky-blue);
+    .hero-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .hero-card p {
+      font-size: 0.88rem;
+      color: var(--color-purple-glow);
+      margin-bottom: 20px;
+    }
+
+    .hero-discount-pill {
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px dashed var(--color-purple-glow);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .code-text {
+      font-family: monospace;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-gold-accent);
       letter-spacing: 0.1em;
     }
 
+    .copy-btn {
+      background: var(--color-purple-vivid);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+    }
+    .copy-btn:hover {
+      background: var(--color-pink-accent);
+    }
+
     /* ==========================================================================
-       Brand Pillars (品牌風格: 高階咖啡豆)
+       Brand Concept Section (品牌風格：低階庫洛米、平價手作溫度)
        ========================================================================== */
-    .pillars-section {
-      background-color: var(--bg-white);
+    .section-wrap {
+      padding: 85px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 660px;
+      margin: 0 auto 50px;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-pink-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.75;
     }
 
     .pillars-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 60px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
     }
 
     .pillar-card {
-      background: var(--bg-light);
+      background: var(--color-black-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 40px 32px;
+      padding: 30px 24px;
       transition: var(--transition);
       position: relative;
       overflow: hidden;
     }
 
+    .pillar-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--color-purple-glow);
+      box-shadow: 0 12px 30px rgba(168, 85, 247, 0.2);
+      background: var(--color-black-card-hover);
+    }
+
     .pillar-card::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-blue), var(--sky-blue));
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-purple-vivid), var(--color-pink-accent));
       opacity: 0;
       transition: var(--transition);
-    }
-
-    .pillar-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-md);
-      border-color: #cbd5e1;
     }
 
     .pillar-card:hover::before {
@@ -502,557 +567,575 @@
     }
 
     .pillar-icon {
-      width: 60px;
-      height: 60px;
+      width: 52px;
+      height: 52px;
       border-radius: var(--radius-sm);
-      background: var(--sky-light);
-      color: var(--primary-blue);
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid var(--color-purple-vivid);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
-      margin-bottom: 24px;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: var(--color-purple-glow);
     }
 
     .pillar-title {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      color: var(--primary-navy);
-      margin-bottom: 14px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
     }
 
     .pillar-desc {
+      font-size: 0.88rem;
       color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.75;
+      line-height: 1.65;
     }
 
     /* ==========================================================================
-       Coffee Menu Showcase (功能: 吸引客戶消費咖啡)
+       Product Shop Section (吸引客人購買 & 手做商品)
        ========================================================================== */
-    .menu-section {
-      background-color: var(--bg-light);
+    .shop-section {
+      background: rgba(15, 11, 24, 0.7);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .menu-header-wrap {
+    .shop-controls {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 24px;
-      margin-bottom: 40px;
+      gap: 16px;
+      margin-bottom: 35px;
     }
 
-    /* Filter Tabs */
-    .filter-tabs {
+    .category-tabs {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .filter-btn {
-      padding: 9px 20px;
-      border-radius: 30px;
-      background: var(--bg-white);
+    .cat-btn {
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      background: var(--color-black-card);
       border: 1px solid var(--border-color);
       color: var(--text-muted);
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
     }
 
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--primary-blue);
-      color: #ffffff;
-      border-color: var(--primary-blue);
+    .cat-btn:hover, .cat-btn.active {
+      background: var(--color-purple-vivid);
+      color: #fff;
+      border-color: var(--color-purple-vivid);
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.35);
     }
 
-    .beans-grid {
+    .shop-notice {
+      font-size: 0.85rem;
+      color: var(--color-pink-accent);
+      background: rgba(244, 63, 94, 0.1);
+      border: 1px solid rgba(244, 63, 94, 0.25);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .products-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
+      gap: 24px;
     }
 
-    .bean-card {
-      background: var(--bg-white);
+    .product-card {
+      background: var(--color-black-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       transition: var(--transition);
-      box-shadow: var(--shadow-sm);
       position: relative;
     }
 
-    .bean-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: #93c5fd;
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--color-purple-glow);
+      box-shadow: 0 15px 35px rgba(168, 85, 247, 0.25);
     }
 
-    .bean-tag {
+    .product-badge {
       position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--sky-light);
-      color: var(--primary-blue);
-      font-size: 0.75rem;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      background: var(--color-pink-accent);
+      color: #fff;
+      font-size: 0.72rem;
       font-weight: 700;
       padding: 4px 10px;
-      border-radius: 20px;
-      letter-spacing: 0.05em;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 8px rgba(244, 63, 94, 0.4);
     }
 
-    .bean-visual-box {
-      background: radial-gradient(circle at center, #f0f7ff, #e2e8f0);
-      padding: 36px 20px 24px;
-      text-align: center;
-      border-bottom: 1px solid var(--border-color);
+    .product-badge.diy {
+      background: var(--color-purple-vivid);
     }
 
-    .bean-avatar-svg {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto;
-      transition: var(--transition);
+    .product-thumb {
+      height: 200px;
+      background: linear-gradient(135deg, #2a1f42, #181126);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
     }
 
-    .bean-card:hover .bean-avatar-svg {
-      transform: scale(1.08) rotate(-4deg);
+    .product-thumb svg {
+      width: 110px;
+      height: 110px;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .bean-body {
-      padding: 24px;
+    .product-card:hover .product-thumb svg {
+      transform: scale(1.12) rotate(-3deg);
+    }
+
+    .product-content {
+      padding: 20px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
-    .bean-origin {
-      font-size: 0.78rem;
+    .product-category {
+      font-size: 0.75rem;
+      color: var(--color-purple-glow);
       font-weight: 700;
-      color: var(--sky-blue);
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.05em;
       margin-bottom: 6px;
     }
 
-    .bean-name {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
+    .product-title {
+      font-size: 1.05rem;
       font-weight: 700;
-      color: var(--primary-navy);
-      margin-bottom: 10px;
+      color: #fff;
       line-height: 1.4;
+      margin-bottom: 8px;
     }
 
-    .bean-notes {
-      font-size: 0.88rem;
+    .product-intro {
+      font-size: 0.82rem;
       color: var(--text-muted);
-      margin-bottom: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+      line-height: 1.55;
+      margin-bottom: 14px;
+      flex-grow: 1;
     }
 
-    .note-pill {
-      background: var(--bg-surface);
-      color: #334155;
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 0.78rem;
-    }
-
-    .bean-roast {
+    .product-rating {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 5px;
       font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px dashed var(--border-color);
+      color: var(--color-gold-accent);
+      margin-bottom: 14px;
     }
 
-    .roast-meter {
-      display: flex;
-      gap: 4px;
+    .product-rating .sold-count {
+      color: var(--text-sub);
+      font-size: 0.75rem;
+      margin-left: 6px;
     }
 
-    .roast-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #cbd5e1;
-    }
-
-    .roast-dot.active {
-      background: var(--accent-gold);
-    }
-
-    .bean-footer {
-      margin-top: auto;
+    .product-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-top: 1px dashed rgba(168, 85, 247, 0.2);
+      padding-top: 14px;
+      margin-top: auto;
     }
 
-    .bean-price {
+    .price-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .original-price {
+      font-size: 0.76rem;
+      color: var(--text-sub);
+      text-decoration: line-through;
+    }
+
+    .sale-price {
       font-family: var(--font-display);
-      font-size: 1.25rem;
+      font-size: 1.28rem;
       font-weight: 700;
-      color: var(--primary-navy);
-    }
-
-    .bean-price small {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--text-muted);
-      margin-left: 2px;
-    }
-
-    .add-cart-btn {
-      background: var(--primary-blue);
       color: #fff;
-      padding: 8px 14px;
-      border-radius: var(--radius-sm);
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
     }
 
-    .add-cart-btn:hover {
-      background: var(--accent-gold);
-      color: var(--primary-navy);
+    .sale-price span {
+      font-size: 0.8rem;
+      color: var(--color-purple-glow);
+    }
+
+    .add-btn {
+      background: linear-gradient(135deg, var(--color-purple-primary), var(--color-purple-vivid));
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+    }
+
+    .add-btn:hover {
+      background: var(--color-pink-accent);
+      transform: scale(1.08);
+      box-shadow: 0 4px 15px rgba(244, 63, 94, 0.45);
     }
 
     /* ==========================================================================
-       Pour-Over Guide (用途: 推廣手沖咖啡)
+       DIY Tutorials & Process (用途：手做)
        ========================================================================== */
-    .brew-section {
-      background: var(--primary-navy);
-      color: #ffffff;
-      position: relative;
-    }
-
-    .brew-grid {
+    .tutorial-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .brew-steps-list {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-top: 36px;
-    }
-
-    .brew-step-item {
-      display: flex;
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 24px;
+    }
+
+    .step-card {
+      background: var(--color-black-card);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
+      padding: 26px 20px;
+      text-align: center;
+      position: relative;
       transition: var(--transition);
     }
 
-    .brew-step-item:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: var(--sky-blue);
-      transform: translateX(6px);
+    .step-card:hover {
+      border-color: var(--color-purple-vivid);
+      transform: translateY(-5px);
     }
 
-    .step-badge {
+    .step-num {
       width: 44px;
       height: 44px;
-      flex-shrink: 0;
+      margin: 0 auto 16px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--sky-blue), var(--primary-blue));
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--color-purple-vivid), var(--color-pink-accent));
+      color: #fff;
       font-family: var(--font-display);
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.35);
     }
 
-    .step-content h4 {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      margin-bottom: 6px;
-      color: #ffffff;
-    }
-
-    .step-content p {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.72);
-      line-height: 1.65;
-    }
-
-    /* Ratio Calculator Card */
-    .calc-card {
-      background: #0d233a;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: var(--radius-lg);
-      padding: 44px 36px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-      position: relative;
-    }
-
-    .calc-card-title {
-      font-family: var(--font-serif);
-      font-size: 1.45rem;
-      color: #ffffff;
+    .step-card h4 {
+      font-size: 1.05rem;
+      color: #fff;
       margin-bottom: 8px;
     }
 
-    .calc-card-subtitle {
-      font-size: 0.88rem;
-      color: var(--sky-blue);
-      margin-bottom: 30px;
+    .step-card p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
-    .calc-field {
-      margin-bottom: 24px;
-    }
-
-    .calc-label {
+    /* Workshop Banner */
+    .workshop-banner {
+      margin-top: 50px;
+      background: linear-gradient(135deg, #2a1545 0%, #150d24 100%);
+      border: 1px solid var(--color-purple-vivid);
+      border-radius: var(--radius-lg);
+      padding: 40px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 10px;
+      gap: 30px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     }
 
-    .calc-slider {
-      width: 100%;
-      height: 6px;
-      border-radius: 3px;
-      background: #1e3a5f;
-      outline: none;
-      appearance: none;
-      -webkit-appearance: none;
+    .workshop-info h3 {
+      font-size: 1.55rem;
+      color: #fff;
+      margin-bottom: 8px;
     }
 
-    .calc-slider::-webkit-slider-thumb {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--sky-blue);
-      cursor: pointer;
-      box-shadow: 0 0 10px var(--sky-blue);
-    }
-
-    .ratio-options {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .ratio-btn {
-      padding: 10px 8px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #ffffff;
-      border-radius: var(--radius-sm);
-      font-size: 0.85rem;
-      text-align: center;
-    }
-
-    .ratio-btn.active, .ratio-btn:hover {
-      background: var(--sky-blue);
-      color: var(--primary-navy);
-      font-weight: 700;
-      border-color: var(--sky-blue);
-    }
-
-    .calc-results {
-      background: rgba(0, 0, 0, 0.25);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      margin-top: 28px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .result-box h5 {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 4px;
-      letter-spacing: 0.05em;
-    }
-
-    .result-box p {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent-gold);
+    .workshop-info p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 600px;
     }
 
     /* ==========================================================================
-       Customer Reviews (目標受眾: 咖啡愛好者)
+       Customer Reviews (目標受眾：庫洛米愛好者 / 促購評價)
        ========================================================================== */
-    .reviews-section {
-      background-color: var(--bg-white);
-    }
-
     .reviews-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 60px;
+      gap: 24px;
     }
 
     .review-card {
-      background: var(--bg-light);
+      background: var(--color-black-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 36px 30px;
+      padding: 26px;
+      transition: var(--transition);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: var(--transition);
     }
 
     .review-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: #cbd5e1;
+      border-color: var(--color-purple-glow);
+      transform: translateY(-5px);
     }
 
-    .review-stars {
-      color: var(--accent-gold);
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-    }
-
-    .review-text {
-      font-size: 0.96rem;
-      color: var(--text-dark);
-      line-height: 1.8;
-      margin-bottom: 24px;
-      font-style: italic;
-    }
-
-    .reviewer-info {
+    .review-header {
       display: flex;
       align-items: center;
-      gap: 14px;
-      border-top: 1px solid var(--border-color);
-      padding-top: 18px;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .reviewer-avatar {
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: var(--primary-blue);
-      color: #fff;
+      background: #2a1b42;
+      border: 2px solid var(--color-purple-vivid);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 1.2rem;
     }
 
-    .reviewer-name {
-      font-weight: 600;
+    .reviewer-meta h5 {
       font-size: 0.95rem;
-      color: var(--primary-navy);
+      color: #fff;
     }
 
-    .reviewer-role {
-      font-size: 0.8rem;
+    .reviewer-meta span {
+      font-size: 0.74rem;
+      color: var(--color-purple-glow);
+    }
+
+    .review-stars {
+      color: var(--color-gold-accent);
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .review-text {
+      font-size: 0.88rem;
       color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 14px;
+      flex-grow: 1;
     }
 
-    /* ==========================================================================
-       CTA / VIP Subscription Section
-       ========================================================================== */
-    .cta-section {
-      background: linear-gradient(135deg, #07192d 0%, var(--primary-blue) 100%);
-      color: #ffffff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-box {
-      max-width: 720px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 3.5vw, 2.7rem);
-      margin-bottom: 18px;
-      color: #ffffff;
-    }
-
-    .cta-desc {
-      font-size: 1.08rem;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 36px;
-      line-height: 1.8;
-    }
-
-    .subscribe-form {
-      display: flex;
-      max-width: 520px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+    .review-item-tag {
+      font-size: 0.74rem;
+      color: var(--text-sub);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 4px 10px;
       border-radius: var(--radius-sm);
-      padding: 6px;
-      backdrop-filter: blur(10px);
-    }
-
-    .subscribe-input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      padding: 12px 18px;
-      color: #ffffff;
-      font-size: 0.95rem;
-      outline: none;
-    }
-
-    .subscribe-input::placeholder {
-      color: rgba(255, 255, 255, 0.55);
-    }
-
-    .subscribe-btn {
-      background: var(--accent-gold);
-      color: var(--primary-navy);
-      font-weight: 700;
-      padding: 12px 24px;
-      border-radius: 4px;
-      white-space: nowrap;
-    }
-
-    .subscribe-btn:hover {
-      background: #fbbf24;
+      display: inline-block;
     }
 
     /* ==========================================================================
-       Cart Drawer (側欄購物車)
+       Flash Sale & Urgency (吸引客人購買)
        ========================================================================== */
-    .cart-drawer-overlay {
+    .countdown-section {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.12), rgba(139, 92, 246, 0.12));
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 45px 35px;
+      text-align: center;
+      margin-top: 50px;
+      position: relative;
+    }
+
+    .timer-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 25px 0 30px;
+    }
+
+    .time-unit {
+      background: var(--color-black-card);
+      border: 1px solid var(--color-purple-vivid);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      min-width: 75px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .time-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color-pink-accent);
+      display: block;
+      line-height: 1.1;
+    }
+
+    .time-label {
+      font-size: 0.72rem;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ==========================================================================
+       FAQ & Contact
+       ========================================================================== */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .faq-item {
+      background: var(--color-black-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--color-purple-vivid);
+    }
+
+    .faq-q {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .faq-q span {
+      color: var(--color-purple-glow);
+    }
+
+    .faq-a {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       Footer
+       ========================================================================== */
+    .site-footer {
+      background: var(--color-black-pure);
+      border-top: 1px solid var(--border-color);
+      padding: 70px 0 30px;
+      margin-top: 80px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 25px;
+      height: 2px;
+      background: var(--color-purple-vivid);
+    }
+
+    .footer-col p {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: var(--text-sub);
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-purple-glow);
+      padding-left: 6px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.82rem;
+      color: var(--text-sub);
+    }
+
+    .student-badge {
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid var(--color-purple-vivid);
+      color: var(--color-purple-light);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+    }
+
+    /* ==========================================================================
+       Cart Drawer (購物車抽屜側欄)
+       ========================================================================== */
+    .cart-overlay {
       position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(4px);
       z-index: 2000;
       opacity: 0;
@@ -1060,7 +1143,7 @@
       transition: var(--transition);
     }
 
-    .cart-drawer-overlay.active {
+    .cart-overlay.active {
       opacity: 1;
       visibility: visible;
     }
@@ -1068,275 +1151,320 @@
     .cart-drawer {
       position: fixed;
       top: 0;
-      right: 0;
+      right: -420px;
       width: min(420px, 100%);
       height: 100%;
-      background: #ffffff;
+      background: var(--color-black-deep);
+      border-left: 1px solid var(--color-purple-vivid);
       z-index: 2001;
-      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
-      transform: translateX(100%);
-      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
+      box-shadow: -10px 0 35px rgba(0, 0, 0, 0.7);
+      transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .cart-drawer.active {
-      transform: translateX(0);
+      right: 0;
     }
 
-    .cart-drawer-header {
-      padding: 24px;
+    .cart-header {
+      padding: 20px 24px;
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .cart-drawer-header h3 {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--primary-navy);
+    .cart-header h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .close-drawer-btn {
+    .close-cart {
       background: transparent;
+      color: var(--text-sub);
       font-size: 1.5rem;
-      color: var(--text-muted);
       line-height: 1;
     }
 
-    .cart-drawer-items {
-      padding: 24px;
-      flex: 1;
+    .close-cart:hover {
+      color: #fff;
+    }
+
+    .cart-items-list {
+      flex-grow: 1;
       overflow-y: auto;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
+    }
+
+    .empty-cart-msg {
+      text-align: center;
+      color: var(--text-sub);
+      margin: auto 0;
+      padding: 40px 20px;
+    }
+
+    .empty-cart-msg svg {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 15px;
+      opacity: 0.4;
     }
 
     .cart-item {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border-color);
+      gap: 14px;
+      background: var(--color-black-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px;
     }
 
-    .cart-item-info h4 {
-      font-size: 0.95rem;
-      color: var(--primary-navy);
+    .cart-item-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      background: #251a3a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cart-item-img svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .cart-item-details {
+      flex-grow: 1;
+    }
+
+    .cart-item-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
       margin-bottom: 4px;
     }
 
-    .cart-item-info p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
     .cart-item-price {
-      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--color-pink-accent);
       font-weight: 700;
-      color: var(--primary-blue);
     }
 
-    .cart-drawer-footer {
-      padding: 24px;
+    .cart-item-qty {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .qty-btn {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      background: #372852;
+      color: #fff;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qty-btn:hover {
+      background: var(--color-purple-vivid);
+    }
+
+    .qty-num {
+      font-size: 0.85rem;
+      font-weight: 700;
+      min-width: 16px;
+      text-align: center;
+    }
+
+    .cart-item-remove {
+      background: transparent;
+      color: var(--text-sub);
+      font-size: 1.1rem;
+      padding: 4px;
+    }
+
+    .cart-item-remove:hover {
+      color: var(--color-pink-accent);
+    }
+
+    .cart-footer {
+      padding: 20px 24px;
       border-top: 1px solid var(--border-color);
-      background: var(--bg-light);
+      background: rgba(11, 7, 18, 0.95);
     }
 
     .cart-total-row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
       font-size: 1.1rem;
       font-weight: 700;
-      margin-bottom: 18px;
-      color: var(--primary-navy);
     }
 
-    .checkout-btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--primary-blue);
-      color: #fff;
-      border-radius: var(--radius-sm);
-      font-size: 1rem;
-      font-weight: 700;
+    .cart-total-amount {
+      color: var(--color-pink-accent);
+      font-family: var(--font-display);
+      font-size: 1.35rem;
     }
 
-    .checkout-btn:hover {
-      background: var(--accent-gold);
-      color: var(--primary-navy);
-    }
-
-    /* Toast Notification */
-    .toast-msg {
+    /* Checkout Modal */
+    .modal-overlay {
       position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: var(--primary-navy);
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-      border: 1px solid var(--sky-blue);
-      font-size: 0.95rem;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
       z-index: 3000;
-      opacity: 0;
-      pointer-events: none;
-      transition: transform 0.3s ease, opacity 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      padding: 20px;
     }
 
-    .toast-msg.show {
-      transform: translateX(-50%) translateY(0);
+    .modal-overlay.active {
       opacity: 1;
+      visibility: visible;
     }
 
-    /* ==========================================================================
-       Footer
-       ========================================================================== */
-    .site-footer {
-      background: #051321;
-      color: rgba(255, 255, 255, 0.7);
-      padding: 80px 0 30px;
-      font-size: 0.9rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
-      gap: 48px;
-      padding-bottom: 60px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .footer-brand p {
-      margin: 18px 0 24px;
-      line-height: 1.8;
-      max-width: 320px;
-    }
-
-    .footer-title {
-      color: #ffffff;
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      margin-bottom: 20px;
+    .modal-box {
+      background: var(--color-black-deep);
+      border: 2px solid var(--color-purple-vivid);
+      border-radius: var(--radius-lg);
+      padding: 35px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
       position: relative;
     }
 
-    .footer-title::after {
-      content: "";
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 24px;
-      height: 2px;
-      background: var(--sky-blue);
-    }
-
-    .footer-links {
-      list-style: none;
+    .modal-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: rgba(168, 85, 247, 0.2);
+      border: 2px solid var(--color-purple-vivid);
       display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .footer-links a:hover {
-      color: var(--sky-blue);
-      transform: translateX(4px);
-    }
-
-    .footer-contact-item {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 12px;
-      line-height: 1.6;
-    }
-
-    .footer-bottom {
-      padding-top: 30px;
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 0.82rem;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--color-pink-accent);
     }
 
-    /* ==========================================================================
-       Responsive Media Queries
-       ========================================================================== */
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, var(--color-purple-dark), #1e1333);
+      border: 1px solid var(--color-purple-vivid);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      z-index: 4000;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive Design */
     @media (max-width: 1024px) {
-      .beans-grid {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-desc {
+        margin: 0 auto 32px;
+      }
+      .hero-cta-group {
+        justify-content: center;
+      }
+      .hero-features-bar {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .hero-card {
+        max-width: 450px;
+        margin: 0 auto;
+      }
+      .pillars-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .pillars-grid, .reviews-grid {
+      .products-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .tutorial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .reviews-grid {
+        grid-template-columns: 1fr;
       }
       .footer-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .brew-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
+      .workshop-banner {
+        flex-direction: column;
+        text-align: center;
       }
     }
 
     @media (max-width: 768px) {
-      .section {
-        padding: 70px 0;
+      .nav-links {
+        display: none;
       }
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .hero-glass-card {
-        padding: 30px 20px;
-      }
-      .mobile-toggle {
+      .mobile-menu-btn {
         display: block;
       }
-      .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: var(--primary-navy);
-        flex-direction: column;
-        padding: 30px 20px;
-        gap: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        transform: translateY(-150%);
-        transition: transform 0.3s ease;
+      .hero-features-bar {
+        grid-template-columns: 1fr;
+        gap: 12px;
       }
-      .nav-menu.open {
-        transform: translateY(0);
+      .products-grid {
+        grid-template-columns: 1fr;
       }
-      .pillars-grid, .reviews-grid, .beans-grid {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .tutorial-grid {
+        grid-template-columns: 1fr;
+      }
+      .faq-grid {
         grid-template-columns: 1fr;
       }
       .footer-grid {
         grid-template-columns: 1fr;
-        gap: 36px;
-      }
-      .subscribe-form {
-        flex-direction: column;
-        background: transparent;
-        border: none;
-      }
-      .subscribe-input {
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: var(--radius-sm);
-        margin-bottom: 10px;
-      }
-      .subscribe-btn {
-        width: 100%;
-        border-radius: var(--radius-sm);
       }
     }
   </style>
@@ -1344,190 +1472,250 @@
 <body>
 
   <!-- ==========================================================================
-       Header / Navigation Bar
+       Header & Navbar
        ========================================================================== -->
-  <header class="site-header" id="header">
-    <div class="container navbar">
-      <!-- Brand Logo -->
-      <a href="#hero" class="brand-logo" aria-label="藍天咖啡首頁">
-        <div class="brand-icon">
-          <!-- Coffee Cup & Sky Steam SVG -->
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-            <line x1="6" y1="1" x2="6" y2="4"></line>
-            <line x1="10" y1="1" x2="10" y2="4"></line>
-            <line x1="14" y1="1" x2="14" y2="4"></line>
-          </svg>
+  <header class="site-header">
+    <div class="container">
+      <nav class="header-nav">
+        <!-- Logo -->
+        <a href="#home" class="brand-logo">
+          <div class="brand-icon-box">
+            <!-- Kuromi Stylized SVG Icon -->
+            <svg viewBox="0 0 40 40" width="28" height="28" fill="none">
+              <!-- Devil Ears -->
+              <path d="M12 18 L7 6 C6 4 10 5 14 12 Z" fill="#8b5cf6"/>
+              <path d="M28 18 L33 6 C34 4 30 5 26 12 Z" fill="#8b5cf6"/>
+              <circle cx="7" cy="5" r="2.5" fill="#f43f5e"/>
+              <circle cx="33" cy="5" r="2.5" fill="#f43f5e"/>
+              <!-- Head -->
+              <ellipse cx="20" cy="22" rx="13" ry="11" fill="#1e1333" stroke="#c084fc" stroke-width="1.5"/>
+              <!-- Skull/Heart emblem -->
+              <circle cx="20" cy="18" r="3.2" fill="#f43f5e"/>
+              <circle cx="18.5" cy="17" r="1.2" fill="#fff"/>
+              <circle cx="21.5" cy="17" r="1.2" fill="#fff"/>
+              <!-- Cute Eyes -->
+              <ellipse cx="15" cy="23" rx="1.5" ry="2.2" fill="#f43f5e"/>
+              <ellipse cx="25" cy="23" rx="1.5" ry="2.2" fill="#f43f5e"/>
+              <!-- Cute Smile -->
+              <path d="M18.5 27 Q20 28.5 21.5 27" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="brand-title">
+            <span class="main-name">可愛庫洛米</span>
+            <span class="sub-name">KUROMI HANDMADE STUDIO</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">首頁</a></li>
+          <li><a href="#about" class="nav-link">手作特色</a></li>
+          <li><a href="#shop" class="nav-link">熱門商品</a></li>
+          <li><a href="#tutorial" class="nav-link">DIY教學</a></li>
+          <li><a href="#reviews" class="nav-link">顧客好評</a></li>
+          <li><a href="#faq" class="nav-link">常見問題</a></li>
+        </ul>
+
+        <!-- Cart & Action -->
+        <div class="header-actions">
+          <button class="cart-btn" id="openCartBtn">
+            <span>🛒 購物車</span>
+            <span class="cart-badge" id="cartBadgeCount">0</span>
+          </button>
         </div>
-        <div class="brand-text">
-          <h1>藍天咖啡</h1>
-          <span>BLUE SKY COFFEE</span>
-        </div>
-      </a>
-
-      <!-- Desktop Nav Menu -->
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#about" class="nav-link">品牌堅持</a></li>
-        <li><a href="#menu" class="nav-link">本季豆單</a></li>
-        <li><a href="#brew-guide" class="nav-link">手沖萃取</a></li>
-        <li><a href="#calculator" class="nav-link">水粉比計算</a></li>
-        <li><a href="#reviews" class="nav-link">啡友盛讚</a></li>
-      </ul>
-
-      <!-- Action Buttons -->
-      <div class="nav-actions">
-        <button class="cart-btn" id="openCartBtn" aria-label="打開購物車">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-          <span>購物車</span>
-          <span class="cart-badge" id="cartCount">0</span>
-        </button>
-
-        <button class="mobile-toggle" id="mobileToggle" aria-label="切換導覽選單">
-          ☰
-        </button>
-      </div>
+      </nav>
     </div>
   </header>
 
   <!-- ==========================================================================
        Hero Section
        ========================================================================== -->
-  <section class="hero" id="hero">
-    <div class="hero-glow"></div>
-    <div class="container hero-grid">
-      <!-- Left Content -->
-      <div class="hero-content">
-        <div class="eyebrow">ARTISAN HAND DRIP COFFEE</div>
-        <h2 class="hero-title">
-          晴空之下的純淨風味，<br>
-          為<span class="highlight">手沖愛好者</span>而生。
-        </h2>
-        <p class="hero-subtitle">
-          嚴選全球高海拔莊園微批次高階咖啡豆，堅持小量慢火烘焙。以 92°C 的水溫與時間溫柔對話，讓每一口咖啡都澄澈、明亮、回甘長久。
-        </p>
+  <section class="hero-section" id="home">
+    <div class="hero-bg-accent"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left Hero Content -->
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="tag-dot"></span>
+            <span>三麗鷗庫洛米愛好者平價手作專門</span>
+          </div>
+          <h1 class="hero-title">
+            甜酷龐克 × 暖心手作<br>
+            打造你的<span class="gradient-text">專屬庫洛米小天地</span>！
+          </h1>
+          <p class="hero-desc">
+            誰說手作周邊一定貴？專為庫洛米粉絲量身設計的平價手作小舖！奶油膠手機殼、萌酷串珠飾品、立體毛線鉤織與新手無痛 DIY 材料包，把暗黑甜美的可愛日常通通帶回家！
+          </p>
+          <div class="hero-cta-group">
+            <a href="#shop" class="btn btn-primary">🛍️ 立即選購熱門手作</a>
+            <a href="#tutorial" class="btn btn-pink">✨ 免費看手作教學</a>
+          </div>
 
-        <div class="hero-cta-group">
-          <a href="#menu" class="btn btn-gold">
-            <span>探索本季高階豆單</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="#brew-guide" class="btn btn-outline">
-            <span>了解手沖萃取法</span>
-          </a>
+          <!-- Hero Highlights Bar -->
+          <div class="hero-features-bar">
+            <div class="hero-feat-item">
+              <div class="hero-feat-icon">💎</div>
+              <div class="hero-feat-text">
+                <strong>平價無負擔</strong>
+                <span>學生親民百元好物</span>
+              </div>
+            </div>
+            <div class="hero-feat-item">
+              <div class="hero-feat-icon">🎀</div>
+              <div class="hero-feat-text">
+                <strong>100% 手作原創</strong>
+                <span>黑紫甜酷獨特細節</span>
+              </div>
+            </div>
+            <div class="hero-feat-item">
+              <div class="hero-feat-icon">🚀</div>
+              <div class="hero-feat-text">
+                <strong>現貨秒出貨</strong>
+                <span>滿 $499 享免運到家</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Metrics -->
-        <div class="hero-stats">
-          <div class="stat-item">
-            <h3>SCA 88+</h3>
-            <p>精品杯測卓越評分</p>
-          </div>
-          <div class="stat-item">
-            <h3>1800m+</h3>
-            <p>高海拔微型莊園豆</p>
-          </div>
-          <div class="stat-item">
-            <h3>48 Hours</h3>
-            <p>每週烘焙新鮮直送</p>
-          </div>
-        </div>
-      </div>
+        <!-- Right Hero Mascot Card -->
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-badge-ribbon">🔥 庫洛米同好大熱門</div>
 
-      <!-- Right Visual Card -->
-      <div class="hero-visual">
-        <div class="hero-glass-card">
-          <div class="badge-float">經典 V60 萃取中</div>
-          
-          <!-- Modern Coffee Dripper SVG -->
-          <svg class="dripper-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Filter Cone -->
-            <path d="M40 50 L160 50 L120 120 L80 120 Z" fill="url(#dripperGrad)" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round"/>
-            <!-- Carafe -->
-            <path d="M75 125 L125 125 L145 180 L55 180 Z" fill="url(#carafeGrad)" stroke="#93c5fd" stroke-width="2.5" stroke-linejoin="round"/>
-            <path d="M62 165 C62 165, 100 162, 138 165 L142 178 L58 178 Z" fill="#f59e0b" opacity="0.85"/>
-            <!-- Steam Rings -->
-            <circle cx="100" cy="30" r="6" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
-            <circle cx="100" cy="18" r="9" stroke="#38bdf8" stroke-width="1.5" opacity="0.3"/>
-            <!-- Droplet -->
-            <circle cx="100" cy="138" r="4" fill="#38bdf8"/>
-            <defs>
-              <linearGradient id="dripperGrad" x1="40" y1="50" x2="160" y2="120" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#38bdf8" stop-opacity="0.35"/>
-                <stop offset="1" stop-color="#0f3d69" stop-opacity="0.6"/>
-              </linearGradient>
-              <linearGradient id="carafeGrad" x1="55" y1="125" x2="145" y2="180" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#e0f2fe" stop-opacity="0.2"/>
-                <stop offset="1" stop-color="#38bdf8" stop-opacity="0.4"/>
-              </linearGradient>
-            </defs>
-          </svg>
+            <!-- Kuromi Stylized Character Vector Illustration -->
+            <div class="kuromi-art">
+              <svg viewBox="0 0 200 200" width="100%" height="100%" fill="none">
+                <!-- Drop Shadow Filter -->
+                <defs>
+                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="8" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                  <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#a855f7"/>
+                    <stop offset="100%" stop-color="#4c1d95"/>
+                  </linearGradient>
+                </defs>
 
-          <div class="dripper-status">手沖黃金參數：92°C / 1:15</div>
-          <div class="dripper-sub">澄澈透明的果香與蜂蜜尾韻</div>
+                <!-- Soft Glow circle behind -->
+                <circle cx="100" cy="100" r="70" fill="url(#purpleGrad)" opacity="0.3" filter="url(#glow)"/>
+
+                <!-- Kuromi Left Jester Ear -->
+                <path d="M60 90 C45 60 25 30 18 18 C15 12 30 15 48 45 C60 65 72 82 72 88 Z" fill="#1b122c" stroke="#a855f7" stroke-width="2"/>
+                <circle cx="18" cy="18" r="8" fill="#f43f5e"/>
+                <circle cx="15" cy="15" r="2.5" fill="#fff"/>
+
+                <!-- Kuromi Right Jester Ear -->
+                <path d="M140 90 C155 60 175 30 182 18 C185 12 170 15 152 45 C140 65 128 82 128 88 Z" fill="#1b122c" stroke="#a855f7" stroke-width="2"/>
+                <circle cx="182" cy="18" r="8" fill="#f43f5e"/>
+                <circle cx="179" cy="15" r="2.5" fill="#fff"/>
+
+                <!-- Body / Collar (Jester bib with bells) -->
+                <path d="M65 145 C65 175 135 175 135 145 Z" fill="#191128" stroke="#8b5cf6" stroke-width="2"/>
+                <!-- Pink Jester points -->
+                <path d="M68 135 L80 155 L92 135 L100 158 L108 135 L120 155 L132 135" fill="#2d174d" stroke="#f43f5e" stroke-width="2"/>
+                <circle cx="80" cy="156" r="3.5" fill="#f43f5e"/>
+                <circle cx="100" cy="159" r="4" fill="#fbbf24"/>
+                <circle cx="120" cy="156" r="3.5" fill="#f43f5e"/>
+
+                <!-- Face Shape -->
+                <ellipse cx="100" cy="105" rx="52" ry="44" fill="#ffffff" stroke="#1b122c" stroke-width="3"/>
+                <!-- Hood Top Shape -->
+                <path d="M50 95 C50 55 150 55 150 95 C140 85 120 80 100 80 C80 80 60 85 50 95 Z" fill="#1b122c"/>
+
+                <!-- Center Skull Emblem (Kuromi Signature) -->
+                <path d="M100 66 C93 66 88 71 88 77 C88 83 93 86 96 87 L96 90 L104 90 L104 87 C107 86 112 83 112 77 C112 71 107 66 100 66 Z" fill="#f43f5e"/>
+                <circle cx="96" cy="76" r="2.5" fill="#1b122c"/>
+                <circle cx="104" cy="76" r="2.5" fill="#1b122c"/>
+
+                <!-- Big Sparkly Eyes -->
+                <ellipse cx="80" cy="105" rx="7" ry="11" fill="#1b122c"/>
+                <ellipse cx="120" cy="105" rx="7" ry="11" fill="#1b122c"/>
+                <!-- Eye Highlights -->
+                <circle cx="78" cy="100" r="3.5" fill="#fff"/>
+                <circle cx="118" cy="100" r="3.5" fill="#fff"/>
+                <circle cx="82" cy="110" r="1.5" fill="#f43f5e"/>
+                <circle cx="122" cy="110" r="1.5" fill="#f43f5e"/>
+
+                <!-- Cute Eyelashes -->
+                <path d="M72 96 L67 92" stroke="#1b122c" stroke-width="2" stroke-linecap="round"/>
+                <path d="M128 96 L133 92" stroke="#1b122c" stroke-width="2" stroke-linecap="round"/>
+
+                <!-- Cute Nose & Cheek Blush -->
+                <ellipse cx="100" cy="112" rx="2" ry="1.2" fill="#1b122c"/>
+                <ellipse cx="70" cy="116" rx="6" ry="3.5" fill="#f43f5e" opacity="0.45"/>
+                <ellipse cx="130" cy="116" rx="6" ry="3.5" fill="#f43f5e" opacity="0.45"/>
+
+                <!-- Cheeky Cat Smile -->
+                <path d="M93 119 Q97 124 100 120 Q103 124 107 119" stroke="#1b122c" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+
+                <!-- Cute Devil Tail with Arrow -->
+                <path d="M135 155 Q165 160 170 135 Q175 110 162 105" stroke="#1b122c" stroke-width="4" stroke-linecap="round" fill="none"/>
+                <polygon points="162,98 172,108 156,112" fill="#f43f5e"/>
+              </svg>
+            </div>
+
+            <h3>可愛庫洛米 Handmade</h3>
+            <p>黑紫甜酷風 ‧ 100% 手作專屬訂製</p>
+
+            <!-- Promo Coupon Box (吸引客人購買) -->
+            <div class="hero-discount-pill">
+              <div>
+                <div style="font-size:0.75rem; color:#cbd5e1; text-align:left;">🎉 首購立減 $50 優惠券代碼：</div>
+                <div class="code-text" id="promoCodeText">KUROMI88</div>
+              </div>
+              <button class="copy-btn" id="copyPromoBtn" onclick="copyCoupon()">複製代碼</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       Brand Pillars (品牌風格: 高階咖啡豆)
-       ========================================================================== */
-  <section class="section pillars-section" id="about">
+       Brand Characteristics / 品牌風格與用途
+       ========================================================================== */ -->
+  <section class="section-wrap" id="about">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 20px;">
-        <div class="eyebrow" style="justify-content: center;">HIGH-END COFFEE CRAFTSMANSHIP</div>
-        <h2 class="section-title">高階手沖豆的四大堅持</h2>
-        <p class="section-desc" style="margin: 0 auto;">
-          我們只專注於手沖咖啡的極致表現，從產區生豆篩選到烘焙曲線調整，每一道工序皆為純淨風味而定。
+      <div class="section-header">
+        <span class="section-eyebrow">Brand Philosophy</span>
+        <h2 class="section-title">為什麼庫洛米粉絲都愛我們的手作？</h2>
+        <p class="section-desc">
+          堅持「平價親民、精緻用心、黑紫甜酷」三大核心，打破市面官方動輒上千的昂貴門檻，讓每位喜愛庫洛米的小夥伴都能輕鬆擁有療癒手作好物！
         </p>
       </div>
 
       <div class="pillars-grid">
-        <!-- Card 1 -->
         <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
-          </div>
-          <h3 class="pillar-title">全球極致微批次生豆</h3>
+          <div class="pillar-icon">💰</div>
+          <h3 class="pillar-title">低階平價 ‧ 學生親民</h3>
           <p class="pillar-desc">
-            每季親赴或直接對接衣索比亞、巴拿馬、肯亞等名莊，只遴選生豆杯測分數 88 分以上的當季首選批次。
+            誰說可愛一定要花大錢？百元甜甜價即可入手精巧手作，零錢就能帶走滿滿心動感。
           </p>
         </div>
 
-        <!-- Card 2 -->
         <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <h3 class="pillar-title">淺中度智能曲線烘焙</h3>
+          <div class="pillar-icon">🎨</div>
+          <h3 class="pillar-title">黑紫甜酷 ‧ 原創設計</h3>
           <p class="pillar-desc">
-            不以過深烘焙掩蓋瑕疵，採用荷蘭高階烘焙機與精密氣流控制，完整保留咖啡豆天然產區花果酸甜與產地風土。
+            以庫洛米經典神秘黑與夢幻紫為基調，融合小惡魔角、骷髏頭與蝴蝶結，打造甜酷龐克視覺。
           </p>
         </div>
 
-        <!-- Card 3 -->
         <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-          </div>
-          <h3 class="pillar-title">為手沖萃取量身校準</h3>
+          <div class="pillar-icon">✂️</div>
+          <h3 class="pillar-title">手作溫度 ‧ 獨一無二</h3>
           <p class="pillar-desc">
-            所有批次皆附贈專屬建議沖煮參數卡（水溫、粉水比、研磨度刻度與注水節奏），讓每一位咖啡愛好者在家都能沖出店內同款絕佳風味。
+            每件作品皆由手作師純手工捏塑、調色、串珠成形，拒絕冰冷流水線，每一件都是專屬特調。
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🎁</div>
+          <h3 class="pillar-title">新手友善 ‧ DIY 材料包</h3>
+          <p class="pillar-desc">
+            內附齊全工具包與手把手圖解影片，手殘黨也能在 20 分鐘內享受親手完成手作的滿滿成就感！
           </p>
         </div>
       </div>
@@ -1535,648 +1723,799 @@
   </section>
 
   <!-- ==========================================================================
-       Coffee Menu Showcase (功能: 吸引客戶消費咖啡)
+       Shop Showcase (功能：吸引客人購買)
        ========================================================================== -->
-  <section class="section menu-section" id="menu">
+  <section class="section-wrap shop-section" id="shop">
     <div class="container">
-      <div class="menu-header-wrap">
-        <div>
-          <div class="eyebrow">EXCLUSIVE SELECTION</div>
-          <h2 class="section-title">本季手沖高階選豆</h2>
-          <p class="section-desc">
-            四款限量單品微批次，展現從清冽柑橘白花到濃郁莓果的多層次風味譜系。
-          </p>
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="filter-tabs">
-          <button class="filter-btn active" data-filter="all">全部豆款</button>
-          <button class="filter-btn" data-filter="floral">花果香調</button>
-          <button class="filter-btn" data-filter="fruity">醇厚酸甜</button>
-          <button class="filter-btn" data-filter="geisha">藝伎稀有款</button>
-        </div>
-      </div>
-
-      <!-- Bean Products Grid -->
-      <div class="beans-grid" id="beansGrid">
-        <!-- Item 1 -->
-        <article class="bean-card" data-category="floral">
-          <div class="bean-tag">熱銷推薦</div>
-          <div class="bean-visual-box">
-            <!-- Coffee Bean Graphic -->
-            <svg class="bean-avatar-svg" viewBox="0 0 100 100" fill="none">
-              <ellipse cx="50" cy="50" rx="36" ry="44" fill="#0f3d69"/>
-              <path d="M50 14 C44 32, 58 68, 50 86" stroke="#38bdf8" stroke-width="4.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="bean-body">
-            <span class="bean-origin">衣索比亞 · 潔蒂普鎮</span>
-            <h3 class="bean-name">耶加雪菲 歌迪貝 G1</h3>
-            <div class="bean-notes">
-              <span class="note-pill">茉莉白花</span>
-              <span class="note-pill">佛手柑</span>
-              <span class="note-pill">荔枝甜感</span>
-            </div>
-            <div class="bean-roast">
-              <span>極淺焙</span>
-              <div class="roast-meter">
-                <div class="roast-dot active"></div>
-                <div class="roast-dot"></div>
-                <div class="roast-dot"></div>
-                <div class="roast-dot"></div>
-              </div>
-            </div>
-            <div class="bean-footer">
-              <div class="bean-price">NT$ 520 <small>/ 200g</small></div>
-              <button class="add-cart-btn" onclick="addToCart('耶加雪菲 歌迪貝 G1', 520)">
-                <span>加入購物車</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Item 2 -->
-        <article class="bean-card" data-category="geisha">
-          <div class="bean-tag" style="background:#fef3c7; color:#b45309;">頂級莊園</div>
-          <div class="bean-visual-box">
-            <svg class="bean-avatar-svg" viewBox="0 0 100 100" fill="none">
-              <ellipse cx="50" cy="50" rx="36" ry="44" fill="#091a2e"/>
-              <path d="M50 14 C44 32, 58 68, 50 86" stroke="#f59e0b" stroke-width="4.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="bean-body">
-            <span class="bean-origin">巴拿馬 · 波奎特產區</span>
-            <h3 class="bean-name">翡翠莊園 藍標藝伎</h3>
-            <div class="bean-notes">
-              <span class="note-pill">橙花花香</span>
-              <span class="note-pill">白桃</span>
-              <span class="note-pill">伯爵茶韻</span>
-            </div>
-            <div class="bean-roast">
-              <span>淺焙</span>
-              <div class="roast-meter">
-                <div class="roast-dot active"></div>
-                <div class="roast-dot active"></div>
-                <div class="roast-dot"></div>
-                <div class="roast-dot"></div>
-              </div>
-            </div>
-            <div class="bean-footer">
-              <div class="bean-price">NT$ 1,280 <small>/ 100g</small></div>
-              <button class="add-cart-btn" onclick="addToCart('翡翠莊園 藍標藝伎', 1280)">
-                <span>加入購物車</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Item 3 -->
-        <article class="bean-card" data-category="fruity">
-          <div class="bean-tag">風味爆棚</div>
-          <div class="bean-visual-box">
-            <svg class="bean-avatar-svg" viewBox="0 0 100 100" fill="none">
-              <ellipse cx="50" cy="50" rx="36" ry="44" fill="#1e3a8a"/>
-              <path d="M50 14 C44 32, 58 68, 50 86" stroke="#60a5fa" stroke-width="4.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="bean-body">
-            <span class="bean-origin">肯亞 · 涅里產區</span>
-            <h3 class="bean-name">奇里尼加 AA 珍珠圓豆</h3>
-            <div class="bean-notes">
-              <span class="note-pill">黑醋栗</span>
-              <span class="note-pill">烏梅汁</span>
-              <span class="note-pill">黑糖回甘</span>
-            </div>
-            <div class="bean-roast">
-              <span>淺中焙</span>
-              <div class="roast-meter">
-                <div class="roast-dot active"></div>
-                <div class="roast-dot active"></div>
-                <div class="roast-dot active"></div>
-                <div class="roast-dot"></div>
-              </div>
-            </div>
-            <div class="bean-footer">
-              <div class="bean-price">NT$ 580 <small>/ 200g</small></div>
-              <button class="add-cart-btn" onclick="addToCart('肯亞 奇里尼加 AA', 580)">
-                <span>加入購物車</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Item 4 -->
-        <article class="bean-card" data-category="fruity">
-          <div class="bean-tag">特殊發酵</div>
-          <div class="bean-visual-box">
-            <svg class="bean-avatar-svg" viewBox="0 0 100 100" fill="none">
-              <ellipse cx="50" cy="50" rx="36" ry="44" fill="#0c4a6e"/>
-              <path d="M50 14 C44 32, 58 68, 50 86" stroke="#38bdf8" stroke-width="4.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="bean-body">
-            <span class="bean-origin">哥倫比亞 · 考卡省</span>
-            <h3 class="bean-name">天堂莊園 雙重厭氧熱衝擊</h3>
-            <div class="bean-notes">
-              <span class="note-pill">草莓優格</span>
-              <span class="note-pill">百香果</span>
-              <span class="note-pill">香草莢</span>
-            </div>
-            <div class="bean-roast">
-              <span>淺焙</span>
-              <div class="roast-meter">
-                <div class="roast-dot active"></div>
-                <div class="roast-dot active"></div>
-                <div class="roast-dot"></div>
-                <div class="roast-dot"></div>
-              </div>
-            </div>
-            <div class="bean-footer">
-              <div class="bean-price">NT$ 680 <small>/ 200g</small></div>
-              <button class="add-cart-btn" onclick="addToCart('天堂莊園 雙重厭氧熱衝擊', 680)">
-                <span>加入購物車</span>
-              </button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       Pour-Over Guide & Interactive Ratio Calculator
-       (用途: 推廣手沖咖啡)
-       ========================================================================== -->
-  <section class="section brew-section" id="brew-guide">
-    <div class="container brew-grid">
-      <!-- Left: Step-by-step Guide -->
-      <div>
-        <div class="eyebrow">BREWING RITUAL</div>
-        <h2 class="section-title" style="color: #ffffff;">藍天手沖四步法</h2>
-        <p class="section-desc" style="color: rgba(255,255,255,0.75);">
-          手沖不只是萃取咖啡，更是與香氣共度的靜心時刻。遵循以下經典步驟，輕鬆釋放豆子靈魂。
+      <div class="section-header">
+        <span class="section-eyebrow">Handmade Collection</span>
+        <h2 class="section-title">熱門手作好物 ‧ 甜酷心動選</h2>
+        <p class="section-desc">
+          精選奶油膠配件、暗黑系串珠、萌軟毛線鉤織與全套 DIY 材料包，點擊加入購物車即可快速下單！
         </p>
+      </div>
 
-        <div class="brew-steps-list">
-          <div class="brew-step-item">
-            <div class="step-badge">01</div>
-            <div class="step-content">
-              <h4>研磨與溫壺準備 (Grind & Rinse)</h4>
-              <p>選用中細研磨度（約二號砂糖粗細），以 92°C 軟水浸濕濾紙並溫熱分享壺，倒除溫壺水。</p>
+      <!-- Category Filter Tabs -->
+      <div class="shop-controls">
+        <div class="category-tabs">
+          <button class="cat-btn active" onclick="filterCategory('all', this)">全部商品 (8)</button>
+          <button class="cat-btn" onclick="filterCategory('cream', this)">奶油膠系列</button>
+          <button class="cat-btn" onclick="filterCategory('beads', this)">手工串珠</button>
+          <button class="cat-btn" onclick="filterCategory('crochet', this)">毛線鉤織</button>
+          <button class="cat-btn" onclick="filterCategory('diy', this)">DIY材料包</button>
+        </div>
+        <div class="shop-notice">
+          <span>⚡ 今日限定：滿 $399 即贈庫洛米手作貼紙包</span>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Product 1 -->
+        <div class="product-card" data-category="cream">
+          <div class="product-badge">🔥 熱銷 NO.1</div>
+          <div class="product-thumb">
+            <!-- Decoden Phone Case Vector Art -->
+            <svg viewBox="0 0 100 100" fill="none">
+              <rect x="25" y="10" width="50" height="80" rx="10" fill="#2d174d" stroke="#c084fc" stroke-width="2"/>
+              <!-- Cream swirls -->
+              <path d="M28 35 Q50 25 72 35 Q50 45 28 35 Z" fill="#a855f7"/>
+              <path d="M28 55 Q50 45 72 55 Q50 65 28 55 Z" fill="#e9d5ff"/>
+              <circle cx="40" cy="40" r="5" fill="#f43f5e"/>
+              <circle cx="60" cy="50" r="6" fill="#8b5cf6"/>
+              <!-- Mini Kuromi Head -->
+              <ellipse cx="50" cy="70" rx="10" ry="8" fill="#1b122c"/>
+              <polygon points="43,64 38,55 46,60" fill="#1b122c"/>
+              <polygon points="57,64 62,55 54,60" fill="#1b122c"/>
+              <circle cx="50" cy="68" r="2" fill="#f43f5e"/>
+            </svg>
+          </div>
+          <div class="product-content">
+            <span class="product-category">奶油膠系列</span>
+            <h3 class="product-title">庫洛米甜酷立體奶油膠手機殼</h3>
+            <p class="product-intro">雙色紫黑漸層無毒環保奶油膠，點綴立體惡魔公仔與小骷髏糖果珠，耐磨又防摔！</p>
+            <div class="product-rating">
+              <span>⭐⭐⭐⭐⭐</span>
+              <span class="sold-count">已售 438 件</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="original-price">NT$ 399</span>
+                <span class="sale-price">NT$ 259 <span>/ 件</span></span>
+              </div>
+              <button class="add-btn" title="加入購物車" onclick="addToCart('庫洛米甜酷立體奶油膠手機殼', 259, 'cream')">＋</button>
             </div>
           </div>
+        </div>
 
-          <div class="brew-step-item">
-            <div class="step-badge">02</div>
-            <div class="step-content">
-              <h4>均勻悶蒸喚醒 (Bloom · 30秒)</h4>
-              <p>注入咖啡粉量 2 至 2.5 倍水量（約 35ml），由中心向外輕繞浸潤，靜置 30 秒等待香氣膨脹釋放。</p>
+        <!-- Product 2 -->
+        <div class="product-card" data-category="beads">
+          <div class="product-badge">NEW 新品</div>
+          <div class="product-thumb">
+            <!-- Beaded Charm Vector Art -->
+            <svg viewBox="0 0 100 100" fill="none">
+              <!-- Bead chain -->
+              <path d="M20 20 Q50 90 80 20" stroke="#a855f7" stroke-width="3" stroke-dasharray="2 6"/>
+              <circle cx="30" cy="45" r="5" fill="#f43f5e"/>
+              <circle cx="40" cy="62" r="6" fill="#8b5cf6"/>
+              <circle cx="50" cy="68" r="7" fill="#1b122c" stroke="#c084fc" stroke-width="1.5"/>
+              <circle cx="60" cy="62" r="6" fill="#f3e8ff"/>
+              <circle cx="70" cy="45" r="5" fill="#f43f5e"/>
+              <!-- Star drop -->
+              <polygon points="50,75 52,82 59,82 53,86 55,93 50,89 45,93 47,86 41,82 48,82" fill="#fbbf24"/>
+            </svg>
+          </div>
+          <div class="product-content">
+            <span class="product-category">手工串珠</span>
+            <h3 class="product-title">星芒暗黑紫 庫洛米手工串珠手鍊</h3>
+            <p class="product-intro">精選奧地利水晶、啞光黑珠與紫晶琉璃，搭配庫洛米金屬垂墜吊飾，低調高級。</p>
+            <div class="product-rating">
+              <span>⭐⭐⭐⭐⭐</span>
+              <span class="sold-count">已售 312 件</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="original-price">NT$ 280</span>
+                <span class="sale-price">NT$ 180 <span>/ 條</span></span>
+              </div>
+              <button class="add-btn" title="加入購物車" onclick="addToCart('星芒暗黑紫 庫洛米手工串珠手鍊', 180, 'beads')">＋</button>
             </div>
           </div>
+        </div>
 
-          <div class="brew-step-item">
-            <div class="step-badge">03</div>
-            <div class="step-content">
-              <h4>穩定中心分段注水 (Pouring Flow)</h4>
-              <p>以細水柱繞圈注水至目標水量的 60%，待粉層水位下降一半後，進行二次注水至總目標水量。</p>
+        <!-- Product 3 -->
+        <div class="product-card" data-category="crochet">
+          <div class="product-badge">手作限定</div>
+          <div class="product-thumb">
+            <!-- Crochet Mascot Vector -->
+            <svg viewBox="0 0 100 100" fill="none">
+              <ellipse cx="50" cy="55" rx="28" ry="24" fill="#3b1764" stroke="#a855f7" stroke-width="2"/>
+              <!-- Crochet Yarn Texture dots -->
+              <circle cx="40" cy="50" r="1.5" fill="#c084fc"/>
+              <circle cx="48" cy="46" r="1.5" fill="#c084fc"/>
+              <circle cx="58" cy="50" r="1.5" fill="#c084fc"/>
+              <circle cx="50" cy="60" r="1.5" fill="#c084fc"/>
+              <!-- Ears -->
+              <polygon points="32,40 22,20 38,28" fill="#1b122c"/>
+              <polygon points="68,40 78,20 62,28" fill="#1b122c"/>
+              <circle cx="21" cy="20" r="3" fill="#f43f5e"/>
+              <circle cx="79" cy="20" r="3" fill="#f43f5e"/>
+              <!-- Eyes & Nose -->
+              <ellipse cx="42" cy="55" rx="2" ry="3.5" fill="#fff"/>
+              <ellipse cx="58" cy="55" rx="2" ry="3.5" fill="#fff"/>
+              <circle cx="50" cy="58" r="1.5" fill="#f43f5e"/>
+            </svg>
+          </div>
+          <div class="product-content">
+            <span class="product-category">毛線鉤織</span>
+            <h3 class="product-title">純手工毛線鉤織 迷你庫洛米娃娃掛件</h3>
+            <p class="product-intro">親膚棉柔毛線細密鉤織而成，小惡魔角與萌系刺繡，掛在書包或鑰匙圈超級吸睛！</p>
+            <div class="product-rating">
+              <span>⭐⭐⭐⭐⭐</span>
+              <span class="sold-count">已售 256 件</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="original-price">NT$ 320</span>
+                <span class="sale-price">NT$ 199 <span>/ 隻</span></span>
+              </div>
+              <button class="add-btn" title="加入購物車" onclick="addToCart('純手工毛線鉤織 迷你庫洛米娃娃掛件', 199, 'crochet')">＋</button>
             </div>
           </div>
+        </div>
 
-          <div class="brew-step-item">
-            <div class="step-badge">04</div>
-            <div class="step-content">
-              <h4>濾乾搖勻細品 (Serve & Enjoy)</h4>
-              <p>總萃取時間控制於 2分15秒 至 2分30秒。輕輕搖勻分享壺，感受溫度從熱至涼的甘醇層次轉折。</p>
+        <!-- Product 4 -->
+        <div class="product-card" data-category="diy">
+          <div class="product-badge diy">新手必備</div>
+          <div class="product-thumb">
+            <!-- DIY Kit Vector -->
+            <svg viewBox="0 0 100 100" fill="none">
+              <!-- Box -->
+              <rect x="20" y="30" width="60" height="50" rx="8" fill="#24153d" stroke="#f43f5e" stroke-width="2"/>
+              <path d="M20 45 L80 45" stroke="#f43f5e" stroke-width="2"/>
+              <path d="M50 30 L50 80" stroke="#f43f5e" stroke-width="2"/>
+              <!-- Ribbon top -->
+              <circle cx="50" cy="30" r="6" fill="#a855f7"/>
+              <path d="M44 26 Q35 15 48 24 Z" fill="#f43f5e"/>
+              <path d="M56 26 Q65 15 52 24 Z" fill="#f43f5e"/>
+              <!-- Stars -->
+              <circle cx="32" cy="62" r="2" fill="#fbbf24"/>
+              <circle cx="68" cy="62" r="2" fill="#fbbf24"/>
+            </svg>
+          </div>
+          <div class="product-content">
+            <span class="product-category">DIY材料包</span>
+            <h3 class="product-title">庫洛米奶油膠音樂盒 新手手作體驗包</h3>
+            <p class="product-intro">整套含：發條音樂盒基座、黑紫雙色奶油膠、5款庫洛米立體樹脂配件、花嘴與刮刀。</p>
+            <div class="product-rating">
+              <span>⭐⭐⭐⭐⭐</span>
+              <span class="sold-count">已售 520 件</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="original-price">NT$ 450</span>
+                <span class="sale-price">NT$ 299 <span>/ 組</span></span>
+              </div>
+              <button class="add-btn" title="加入購物車" onclick="addToCart('庫洛米奶油膠音樂盒 新手手作體驗包', 299, 'diy')">＋</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card" data-category="cream">
+          <div class="product-badge">人氣爆款</div>
+          <div class="product-thumb">
+            <svg viewBox="0 0 100 100" fill="none">
+              <!-- Mirror with cream -->
+              <circle cx="50" cy="45" r="28" fill="#1b122c" stroke="#c084fc" stroke-width="2"/>
+              <circle cx="50" cy="45" r="22" fill="#3b1764"/>
+              <rect x="46" y="70" width="8" height="22" rx="4" fill="#a855f7"/>
+              <path d="M30 30 Q50 20 70 30" stroke="#f43f5e" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="50" cy="42" r="6" fill="#f3e8ff"/>
+            </svg>
+          </div>
+          <div class="product-content">
+            <span class="product-category">奶油膠系列</span>
+            <h3 class="product-title">庫洛米暗夜黑手持手作隨身化妝鏡</h3>
+            <p class="product-intro">雙面高清放大鏡面，背面全手工鋪滿紫色仿真花瓣奶油膠與庫洛米骷髏浮雕。</p>
+            <div class="product-rating">
+              <span>⭐⭐⭐⭐⭐</span>
+              <span class="sold-count">已售 189 件</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="original-price">NT$ 260</span>
+                <span class="sale-price">NT$ 169 <span>/ 支</span></span>
+              </div>
+              <button class="add-btn" title="加入購物車" onclick="addToCart('庫洛米暗夜黑手持手作隨身化妝鏡', 169, 'cream')">＋</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card" data-category="beads">
+          <div class="product-badge">特惠折扣</div>
+          <div class="product-thumb">
+            <svg viewBox="0 0 100 100" fill="none">
+              <circle cx="35" cy="50" r="14" stroke="#a855f7" stroke-width="3"/>
+              <circle cx="65" cy="50" r="14" stroke="#f43f5e" stroke-width="3"/>
+              <path d="M47 50 L53 50" stroke="#fff" stroke-width="2"/>
+              <polygon points="50,35 52,42 58,42 53,46 55,53 50,49 45,53 47,46 42,42 48,42" fill="#fbbf24"/>
+            </svg>
+          </div>
+          <div class="product-content">
+            <span class="product-category">手工串珠</span>
+            <h3 class="product-title">雙子星酷洛米 閨蜜黑紫手作手機掛繩</h3>
+            <p class="product-intro">耐磨高承重編織芯線，掛脖手提兩用，搭配抗氧化合金扣具，安心防掉機。</p>
+            <div class="product-rating">
+              <span>⭐⭐⭐⭐⭐</span>
+              <span class="sold-count">已售 340 件</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="original-price">NT$ 220</span>
+                <span class="sale-price">NT$ 139 <span>/ 條</span></span>
+              </div>
+              <button class="add-btn" title="加入購物車" onclick="addToCart('雙子星酷洛米 閨蜜黑紫手作手機掛繩', 139, 'beads')">＋</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card" data-category="diy">
+          <div class="product-badge diy">手作自組</div>
+          <div class="product-thumb">
+            <svg viewBox="0 0 100 100" fill="none">
+              <!-- Acrylic block -->
+              <rect x="25" y="20" width="50" height="60" rx="4" fill="#1b122c" stroke="#8b5cf6" stroke-width="2"/>
+              <rect x="30" y="25" width="40" height="50" rx="2" fill="#2d174d"/>
+              <polygon points="50,40 40,65 60,65" fill="#f43f5e"/>
+              <circle cx="50" cy="50" r="5" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="product-content">
+            <span class="product-category">DIY材料包</span>
+            <h3 class="product-title">庫洛米立體雷射咕卡磚 DIY手作盒</h3>
+            <p class="product-intro">高透壓克力磁吸磚，附送雷射炫彩貼紙包、雷射燙金角貼與鑷子，輕鬆封存心愛拍立得！</p>
+            <div class="product-rating">
+              <span>⭐⭐⭐⭐⭐</span>
+              <span class="sold-count">已售 410 件</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="original-price">NT$ 199</span>
+                <span class="sale-price">NT$ 120 <span>/ 組</span></span>
+              </div>
+              <button class="add-btn" title="加入購物車" onclick="addToCart('庫洛米立體雷射咕卡磚 DIY手作盒', 120, 'diy')">＋</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card" data-category="crochet">
+          <div class="product-badge">超萌熱賣</div>
+          <div class="product-thumb">
+            <svg viewBox="0 0 100 100" fill="none">
+              <!-- Bucket hat / coaster -->
+              <ellipse cx="50" cy="50" rx="30" ry="20" fill="#25123d" stroke="#c084fc" stroke-width="2"/>
+              <path d="M20 50 C20 70 80 70 80 50" fill="#3b1764"/>
+              <circle cx="50" cy="50" r="6" fill="#f43f5e"/>
+              <circle cx="38" cy="52" r="3" fill="#fbbf24"/>
+              <circle cx="62" cy="52" r="3" fill="#fbbf24"/>
+            </svg>
+          </div>
+          <div class="product-content">
+            <span class="product-category">毛線鉤織</span>
+            <h3 class="product-title">庫洛米惡魔角造型 手工羊毛編織杯墊</h3>
+            <p class="product-intro">辦公桌、書桌必備的甜酷療癒配件！吸水隔熱不燙手，小惡魔角立體突出超吸睛。</p>
+            <div class="product-rating">
+              <span>⭐⭐⭐⭐⭐</span>
+              <span class="sold-count">已售 275 件</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="original-price">NT$ 160</span>
+                <span class="sale-price">NT$ 99 <span>/ 片</span></span>
+              </div>
+              <button class="add-btn" title="加入購物車" onclick="addToCart('庫洛米惡魔角造型 手工羊毛編織杯墊', 99, 'crochet')">＋</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Right: Interactive Coffee Brew Ratio Calculator -->
-      <div id="calculator">
-        <div class="calc-card">
-          <h3 class="calc-card-title">手沖黃金水粉比計算器</h3>
-          <p class="calc-card-subtitle">依據個人口感喜好，即時計算最佳注水量與參數</p>
-
-          <!-- Input: Grounds Weight -->
-          <div class="calc-field">
-            <div class="calc-label">
-              <span>咖啡粉重量</span>
-              <strong style="color: var(--sky-blue);" id="groundValDisplay">15 g</strong>
-            </div>
-            <input type="range" min="10" max="35" step="1" value="15" class="calc-slider" id="groundSlider">
+      <!-- Flash Sale Urgency Banner (促銷倒數，激發下單) -->
+      <div class="countdown-section">
+        <span class="section-eyebrow">Limited Time Offer</span>
+        <h3 style="font-size: 1.6rem; color:#fff; margin-bottom: 8px;">🔥 甜酷手作季 ‧ 全館滿額贈即將截止</h3>
+        <p style="color: #cbd5e1; font-size: 0.95rem;">全館下單滿 $499 現折 $60，加碼再送「庫洛米限定手作金屬徽章」！</p>
+        
+        <div class="timer-boxes">
+          <div class="time-unit">
+            <span class="time-num" id="hours">08</span>
+            <span class="time-label">Hours</span>
           </div>
-
-          <!-- Input: Ratio Selection -->
-          <div class="calc-field">
-            <div class="calc-label">
-              <span>水粉比例選擇</span>
-              <span style="font-size:0.8rem; color:var(--sky-blue);" id="ratioName">經典平衡 (1:15)</span>
-            </div>
-            <div class="ratio-options">
-              <button class="ratio-btn" onclick="selectRatio(14, '濃郁飽滿 (1:14)')">1 : 14 濃郁</button>
-              <button class="ratio-btn active" onclick="selectRatio(15, '經典平衡 (1:15)')">1 : 15 經典</button>
-              <button class="ratio-btn" onclick="selectRatio(16, '清透果酸 (1:16)')">1 : 16 清新</button>
-            </div>
+          <div class="time-unit">
+            <span class="time-num" id="minutes">42</span>
+            <span class="time-label">Mins</span>
           </div>
-
-          <!-- Dynamic Output Results -->
-          <div class="calc-results">
-            <div class="result-box">
-              <h5>總需水量 (Total Water)</h5>
-              <p id="totalWaterDisplay">225 ml</p>
-            </div>
-            <div class="result-box">
-              <h5>悶蒸注水量 (Bloom Water)</h5>
-              <p id="bloomWaterDisplay">35 ml</p>
-            </div>
-            <div class="result-box">
-              <h5>建議水溫 (Temperature)</h5>
-              <p>91 ~ 93 °C</p>
-            </div>
-            <div class="result-box">
-              <h5>建議總時間 (Extraction)</h5>
-              <p>02'15''</p>
-            </div>
+          <div class="time-unit">
+            <span class="time-num" id="seconds">19</span>
+            <span class="time-label">Secs</span>
           </div>
         </div>
+
+        <a href="#shop" class="btn btn-pink" onclick="triggerToast('🎉 優惠碼 KUROMI88 已自動套用至購物車！')">立即搶購限定優惠</a>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       Customer Reviews (目標受眾: 咖啡愛好者)
+       DIY Tutorials & Process (用途：手做教學)
        ========================================================================== -->
-  <section class="section reviews-section" id="reviews">
+  <section class="section-wrap" id="tutorial">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 20px;">
-        <div class="eyebrow" style="justify-content: center;">COFFEE ENTHUSIAST FEEDBACK</div>
-        <h2 class="section-title">愛好者杯中的晴朗時刻</h2>
-        <p class="section-desc" style="margin: 0 auto;">
-          來自專業杯測師、手沖愛好者與獨立咖啡館主理人的真實品鑑分享。
+      <div class="section-header">
+        <span class="section-eyebrow">Handmade Tutorial</span>
+        <h2 class="section-title">4 步驟新手也能輕鬆做！手作流程圖解</h2>
+        <p class="section-desc">
+          無論是奶油膠擠花、串珠配線還是咕卡黏貼，只要跟著簡單教學步驟，就能輕鬆做出心動手作成品！
+        </p>
+      </div>
+
+      <div class="tutorial-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4>挑選材料包與主題</h4>
+          <p>根據喜好的手作類型（奶油膠、串珠、毛線），選擇對應的庫洛米配件包與底胚。</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>觀看圖解影片教學</h4>
+          <p>掃描包裝隨附的 QR Code，觀看 3 分鐘無廢話快修教學，掌握擠花手勢與配色技巧。</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>發揮創意拼貼串接</h4>
+          <p>將庫洛米大頭公仔、小骷髏配件與星芒珠飾依照個人喜好排版固定，享受創作時光。</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h4>通風晾乾 ‧ 秀出成果</h4>
+          <p>自然通風陰乾 24-48 小時，專屬於你的黑紫甜酷庫洛米手作好物即可大功告成！</p>
+        </div>
+      </div>
+
+      <!-- Workshop Invitation Banner -->
+      <div class="workshop-banner">
+        <div class="workshop-info">
+          <h3>🎪 加入庫洛米同好手作線上交流群</h3>
+          <p>每週五晚上由主理人直播分享最新手作技巧、材料調配密技，並抽出 5 位幸運粉絲免費贈送全套材料包！</p>
+        </div>
+        <button class="btn btn-primary" onclick="triggerToast('💌 已為您開啟手作交流群登記表單！')">免費預約加入</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Customer Reviews (目標受眾：喜愛庫洛米的愛好者)
+       ========================================================================== -->
+  <section class="section-wrap" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Real Feedback</span>
+        <h2 class="section-title">庫洛米愛好者的真實好評分享</h2>
+        <p class="section-desc">
+          來自全台手作愛好者與三麗鷗迷的心動實測反饋，好評率高達 99.4%！
         </p>
       </div>
 
       <div class="reviews-grid">
         <!-- Review 1 -->
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            「耶加雪菲的茉莉花香非常鮮活！92度沖出來酸甜平衡感極佳，放涼後喝起來像在喝頂級白桃果茶，完全打破我對咖啡酸味的刻板印象。」
-          </p>
-          <div class="reviewer-info">
-            <div class="reviewer-avatar">林</div>
-            <div>
-              <div class="reviewer-name">林宏宇</div>
-              <div class="reviewer-role">居家手沖愛好者 · 沖煮經驗 4 年</div>
+          <div class="review-header">
+            <div class="reviewer-avatar">😈</div>
+            <div class="reviewer-meta">
+              <h5>小紫醬（大學生）</h5>
+              <span>購買了：庫洛米奶油膠手機殼</span>
             </div>
           </div>
+          <div class="review-stars">★★★★★ 5.0</div>
+          <p class="review-text">
+            「實體真的太可愛了！奶油膠質感超好完全沒有刺鼻化學味，而且紫黑色超級龐克甜美！帶去學校同學都問在哪裡買的，平價好物大推！」
+          </p>
+          <span class="review-item-tag">#手作細緻 #平價推薦 #出貨神速</span>
         </div>
 
         <!-- Review 2 -->
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            「藍天咖啡的翡翠莊園藍標藝伎，乾香就是滿滿的橙花與柑橘調。附贈的沖煮參數卡非常精準，照著做一次就沖出令人驚豔的伯爵茶感。」
-          </p>
-          <div class="reviewer-info">
-            <div class="reviewer-avatar">陳</div>
-            <div>
-              <div class="reviewer-name">陳雅筑</div>
-              <div class="reviewer-role">SCA 國際咖啡證照烘豆師</div>
+          <div class="review-header">
+            <div class="reviewer-avatar">🖤</div>
+            <div class="reviewer-meta">
+              <h5>黑糖波波（手作狂熱者）</h5>
+              <span>購買了：新手奶油膠音樂盒體驗包</span>
             </div>
           </div>
+          <div class="review-stars">★★★★★ 5.0</div>
+          <p class="review-text">
+            「本來很擔心自己手殘會毀掉，沒想到教學影片講得很清楚，材料給得超大方！做完放在床頭每天聽音樂盒轉動，身心靈都被庫洛米治癒了～」
+          </p>
+          <span class="review-item-tag">#新手零失敗 #配件超豐富 #治癒系</span>
         </div>
 
         <!-- Review 3 -->
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            「肯亞奇里尼加的黑醋栗與黑糖甜感無可挑剔！出貨日期真的都是當週新鮮現烘，咖啡豆排氣養豆後沖煮極其順暢，已加入每月固定訂閱。」
-          </p>
-          <div class="reviewer-info">
-            <div class="reviewer-avatar">張</div>
-            <div>
-              <div class="reviewer-name">張博翔</div>
-              <div class="reviewer-role">台北獨立工作室主理人</div>
+          <div class="review-header">
+            <div class="reviewer-avatar">✨</div>
+            <div class="reviewer-meta">
+              <h5>Miku Lu（庫洛米資深粉）</h5>
+              <span>購買了：星芒暗黑紫手工串珠手鍊</span>
             </div>
           </div>
+          <div class="review-stars">★★★★★ 5.0</div>
+          <p class="review-text">
+            「串珠的光澤在陽光下超級仙！金屬扣具也很紮實不容易氧化，重點是一條不到兩百塊，比官方周邊划算太多太多了，已經回購第二條送閨蜜！」
+          </p>
+          <span class="review-item-tag">#性價比極高 #回購率100% #設計感滿分</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       CTA & Subscription Section (吸引客戶消費咖啡)
+       FAQ Section
        ========================================================================== -->
-  <section class="section cta-section" id="subscribe">
-    <div class="container cta-box">
-      <div class="eyebrow" style="color: #ffffff; justify-content: center;">JOIN THE BLUE SKY CLUB</div>
-      <h2 class="cta-title">訂閱每月產地尋味，<br>享受手沖咖啡的新鮮直送</h2>
-      <p class="cta-desc">
-        每月精選兩款限量莊園級咖啡豆，享有專屬 9 折會員禮遇與沖煮指南。立即留下電子信箱，首期訂購現折 NT$ 100。
-      </p>
-
-      <form class="subscribe-form" id="subscribeForm">
-        <input type="email" class="subscribe-input" placeholder="請輸入您的電子郵件地址..." required id="userEmail">
-        <button type="submit" class="subscribe-btn">領取優惠並訂閱</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       Shopping Cart Drawer
-       ========================================================================== -->
-  <div class="cart-drawer-overlay" id="cartOverlay"></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-label="購物車抽屜">
-    <div class="cart-drawer-header">
-      <h3>我的品味清單 (<span id="drawerCount">0</span>)</h3>
-      <button class="close-drawer-btn" id="closeCartBtn">&times;</button>
-    </div>
-
-    <div class="cart-drawer-items" id="cartItemsContainer">
-      <!-- Empty State -->
-      <p style="text-align:center; color:#94a3b8; margin-top:40px;">目前購物車內尚無咖啡豆。<br>快去挑選您喜愛的手沖產區吧！</p>
-    </div>
-
-    <div class="cart-drawer-footer">
-      <div class="cart-total-row">
-        <span>結帳總額</span>
-        <span id="cartTotal">NT$ 0</span>
-      </div>
-      <button class="checkout-btn" onclick="checkoutAction()">前往結帳確認</button>
-    </div>
-  </aside>
-
-  <!-- Floating Toast Notification -->
-  <div class="toast-msg" id="toastMsg">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5">
-      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-    </svg>
-    <span id="toastText">已成功加入購物車！</span>
-  </div>
-
-  <!-- ==========================================================================
-       Footer
-       ========================================================================== -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <!-- Column 1: Brand Info -->
-      <div class="footer-brand">
-        <div class="brand-logo" style="margin-bottom: 12px;">
-          <div class="brand-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
-              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-            </svg>
-          </div>
-          <div class="brand-text">
-            <h2 style="font-size: 1.15rem; font-family: var(--font-serif); color:#fff;">藍天咖啡</h2>
-            <span>BLUE SKY COFFEE</span>
-          </div>
-        </div>
-        <p>
-          藍天咖啡專注於推廣純粹的手沖咖啡工藝。我們相信，好的咖啡如清晨晴空般清澈透明，值得每一位咖啡愛好者細細品嚐。
+  <section class="section-wrap" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Frequently Asked Questions</span>
+        <h2 class="section-title">常見手作購買與使用問題</h2>
+        <p class="section-desc">
+          讓您買得安心、玩得開心！以下為常見手作好物相關解答：
         </p>
       </div>
 
-      <!-- Column 2: Quick Links -->
-      <div>
-        <h4 class="footer-title">快速導覽</h4>
-        <ul class="footer-links">
-          <li><a href="#about">品牌堅持</a></li>
-          <li><a href="#menu">本季高階豆單</a></li>
-          <li><a href="#brew-guide">手沖四步法</a></li>
-          <li><a href="#calculator">水粉比計算工具</a></li>
-          <li><a href="#reviews">顧客真實盛讚</a></li>
-        </ul>
-      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q"><span>Q1.</span> 手工製作需要等多久出貨？</div>
+          <div class="faq-a">
+            標註「現貨」的商品於下單後 24-48 小時內寄出；若是客製化奶油膠手機殼（需陰乾固化），製作工期約 3-5 個工作天，完成即第一時間為您發貨。
+          </div>
+        </div>
 
-      <!-- Column 3: Coffee Knowledge -->
-      <div>
-        <h4 class="footer-title">手沖學堂</h4>
-        <ul class="footer-links">
-          <li><a href="#brew-guide">淺焙花果香沖煮溫控</a></li>
-          <li><a href="#brew-guide">V60 濾杯流速解析</a></li>
-          <li><a href="#brew-guide">咖啡豆新鮮養豆法</a></li>
-          <li><a href="#calculator">水質與萃取率關聯</a></li>
-        </ul>
-      </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Q2.</span> 奶油膠材料包會有味道嗎？安全嗎？</div>
+          <div class="faq-a">
+            我們嚴選通過 SGS 無毒安全檢驗的水性環保奶油膠，無刺鼻溶劑味，操作溫和不傷手，大人小孩皆可安心發揮創意製作！
+          </div>
+        </div>
 
-      <!-- Column 4: Contact & Location -->
-      <div>
-        <h4 class="footer-title">聯絡與門市體驗</h4>
-        <div class="footer-contact-item">
-          <span>📍</span>
-          <span>台北市大安區晴空路一段 88 號（手沖體驗旗艦店）</span>
+        <div class="faq-item">
+          <div class="faq-q"><span>Q3.</span> 完全沒有手作經驗的新手做得出來嗎？</div>
+          <div class="faq-a">
+            絕對沒問題！我們的 DIY 材料包專為零基礎設計，隨盒附贈圖解說明卡與高畫質教學影片，照著擠花與黏貼，初學者也能 20 分鐘上手。
+          </div>
         </div>
-        <div class="footer-contact-item">
-          <span>📞</span>
-          <span>(02) 2788-9900</span>
-        </div>
-        <div class="footer-contact-item">
-          <span>✉️</span>
-          <span>service@blueskycoffee.tw</span>
-        </div>
-        <div class="footer-contact-item">
-          <span>⏰</span>
-          <span>週一至週日 09:30 - 18:30</span>
+
+        <div class="faq-item">
+          <div class="faq-q"><span>Q4.</span> 支援哪些付款與配送方式？</div>
+          <div class="faq-a">
+            支援 7-11 / 全家超商取貨付款、信用卡線上刷卡、Line Pay 與街口支付。單筆訂單滿 NT$ 499 享全台免運費！
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Bottom Bar -->
-    <div class="container footer-bottom">
-      <p>© 2026 藍天咖啡 BLUE SKY COFFEE CO., LTD. 版權所有 · 專為手沖愛好者打造</p>
-      <p>網站規格遵循：高階咖啡豆 · 品牌藍色調 · 推廣手沖咖啡 · 促進消費體驗</p>
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 style="display:flex; align-items:center; gap:8px;">
+            <span>可愛庫洛米</span>
+          </h4>
+          <p>
+            專為喜愛庫洛米的三麗鷗粉絲打造的平價手作工坊。透過手作的溫度與黑紫甜酷龐克美學，把生活點綴得更加心動可愛！
+          </p>
+          <div class="student-badge">
+            學號：11515254 ｜ 姓名：呂沛蓁
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>手作商品導覽</h4>
+          <ul class="footer-links">
+            <li><a href="#shop" onclick="filterCategory('cream')">立體奶油膠系列</a></li>
+            <li><a href="#shop" onclick="filterCategory('beads')">原創手工串珠飾品</a></li>
+            <li><a href="#shop" onclick="filterCategory('crochet')">溫暖毛線編織掛件</a></li>
+            <li><a href="#shop" onclick="filterCategory('diy')">新手 DIY 材料包</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>貼心客戶服務</h4>
+          <ul class="footer-links">
+            <li><a href="#faq">配送與出貨進度查詢</a></li>
+            <li><a href="#faq">手作材料包補件申請</a></li>
+            <li><a href="#faq">退換貨保障說明</a></li>
+            <li><a href="#tutorial">手作新手影片專區</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>訂閱手作優惠電子報</h4>
+          <p>第一時間接收庫洛米手作新品通知與專屬 VIP 折扣碼：</p>
+          <div style="display:flex; gap:8px;">
+            <input type="email" placeholder="請輸入您的 Email" style="background:#1f1631; border:1px solid var(--color-purple-vivid); color:#fff; padding:10px 14px; border-radius:6px; font-size:0.85rem; width:100%; outline:none;">
+            <button class="btn btn-pink" style="padding:10px 16px; border-radius:6px;" onclick="triggerToast('💌 感謝訂閱！首購禮物券已發送至您的信箱！')">訂閱</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 可愛庫洛米 Handmade Studio. All rights reserved.
+        </div>
+        <div style="color:var(--color-purple-glow);">
+          品牌顏色：黑色 × 紫色 ｜ 品牌風格：低階平價庫洛米 ｜ 用途：手做
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- ==========================================================================
+       Shopping Cart Drawer (購物車抽屜)
+       ========================================================================== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>
+        <span>🛒 我的購物車</span>
+      </h3>
+      <button class="close-cart" id="closeCartBtn">✕</button>
+    </div>
+
+    <div class="cart-items-list" id="cartItemsList">
+      <!-- Empty Cart State -->
+      <div class="empty-cart-msg" id="emptyCartMsg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+        </svg>
+        <p>購物車目前空空如也～<br>快去挑選喜歡的庫洛米手作吧！</p>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>小計金額</span>
+        <span class="cart-total-amount" id="cartTotalAmount">NT$ 0</span>
+      </div>
+      <p style="font-size:0.75rem; color:#94a3b8; margin-bottom:12px; text-align:center;">
+        🚚 全館滿 NT$ 499 即享超商免運優惠！
+      </p>
+      <button class="btn btn-primary" style="width:100%;" id="checkoutBtn" onclick="openCheckoutModal()">
+        立即結帳 ‧ 帶庫洛米回家
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Checkout Modal (結帳彈窗)
+       ========================================================================== -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-box">
+      <div class="modal-icon">🎉</div>
+      <h3 style="font-size:1.4rem; margin-bottom:8px; color:#fff;">感謝您對「可愛庫洛米」的喜愛！</h3>
+      <p style="font-size:0.9rem; color:#cbd5e1; line-height:1.7; margin-bottom:20px;">
+        您的手作訂單已成功建立！我們的手作工坊將用心為您製作專屬的黑紫甜酷好物，並以最快速度發貨！
+      </p>
+      <div style="background:rgba(168,85,247,0.15); border:1px dashed var(--color-purple-vivid); padding:12px; border-radius:8px; margin-bottom:20px; font-size:0.85rem;">
+        <div>訂單編號：<strong style="color:var(--color-gold-accent);">KM-20261022-88</strong></div>
+        <div style="margin-top:4px;">預計到貨：<span style="color:#e9d5ff;">2 ~ 4 個工作天</span></div>
+      </div>
+      <button class="btn btn-pink" style="width:100%;" onclick="closeCheckoutModal()">確認並繼續逛逛</button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Toast Message
+       ========================================================================== -->
+  <div class="toast" id="toastMessage">
+    <span>💜 已成功加入購物車！</span>
+  </div>
 
   <!-- ==========================================================================
        JavaScript Logic
        ========================================================================== -->
   <script>
-    // 1. Mobile Menu Toggle
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.getElementById('navMenu');
+    // Shopping Cart State
+    let cart = [];
 
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      mobileToggle.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
-    });
-
-    // Close mobile nav when clicking any nav link
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        mobileToggle.textContent = '☰';
-      });
-    });
-
-    // 2. Coffee Menu Filter Tabs
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const beanCards = document.querySelectorAll('.bean-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-        beanCards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // 3. Interactive Brew Calculator
-    const groundSlider = document.getElementById('groundSlider');
-    const groundValDisplay = document.getElementById('groundValDisplay');
-    const totalWaterDisplay = document.getElementById('totalWaterDisplay');
-    const bloomWaterDisplay = document.getElementById('bloomWaterDisplay');
-    const ratioName = document.getElementById('ratioName');
-    let currentRatio = 15;
-
-    function updateCalculator() {
-      const grounds = parseInt(groundSlider.value, 10);
-      groundValDisplay.textContent = grounds + ' g';
-      const totalWater = grounds * currentRatio;
-      const bloomWater = Math.round(grounds * 2.3);
-      totalWaterDisplay.textContent = totalWater + ' ml';
-      bloomWaterDisplay.textContent = bloomWater + ' ml';
-    }
-
-    function selectRatio(ratio, name) {
-      currentRatio = ratio;
-      ratioName.textContent = name;
-      document.querySelectorAll('.ratio-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.textContent.includes(`1 : ${ratio}`)) {
-          btn.classList.add('active');
-        }
-      });
-      updateCalculator();
-    }
-
-    groundSlider.addEventListener('input', updateCalculator);
-
-    // 4. Shopping Cart System (吸引客戶消費咖啡)
-    const cart = [];
-    const cartCountEl = document.getElementById('cartCount');
-    const drawerCountEl = document.getElementById('drawerCount');
-    const cartItemsContainer = document.getElementById('cartItemsContainer');
-    const cartTotalEl = document.getElementById('cartTotal');
-    const cartOverlay = document.getElementById('cartOverlay');
-    const cartDrawer = document.getElementById('cartDrawer');
+    // Elements
     const openCartBtn = document.getElementById('openCartBtn');
     const closeCartBtn = document.getElementById('closeCartBtn');
-    const toastMsg = document.getElementById('toastMsg');
-    const toastText = document.getElementById('toastText');
-    let toastTimer;
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartItemsList = document.getElementById('cartItemsList');
+    const emptyCartMsg = document.getElementById('emptyCartMsg');
+    const cartBadgeCount = document.getElementById('cartBadgeCount');
+    const cartTotalAmount = document.getElementById('cartTotalAmount');
+    const checkoutModal = document.getElementById('checkoutModal');
+    const toastMessage = document.getElementById('toastMessage');
 
-    function showToast(text) {
-      toastText.textContent = text;
-      toastMsg.classList.add('show');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => {
-        toastMsg.classList.remove('show');
+    // Cart Drawer Toggle
+    function toggleCart(show) {
+      if (show) {
+        cartOverlay.classList.add('active');
+        cartDrawer.classList.add('active');
+      } else {
+        cartOverlay.classList.remove('active');
+        cartDrawer.classList.remove('active');
+      }
+    }
+
+    openCartBtn.addEventListener('click', () => toggleCart(true));
+    closeCartBtn.addEventListener('click', () => toggleCart(false));
+    cartOverlay.addEventListener('click', () => toggleCart(false));
+
+    // Toast Notification
+    let toastTimeout;
+    function triggerToast(text) {
+      toastMessage.innerHTML = `<span>${text}</span>`;
+      toastMessage.classList.add('show');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toastMessage.classList.remove('show');
       }, 3000);
     }
 
-    function openCart() {
-      cartOverlay.classList.add('active');
-      cartDrawer.classList.add('active');
-    }
-
-    function closeCart() {
-      cartOverlay.classList.remove('active');
-      cartDrawer.classList.remove('active');
-    }
-
-    openCartBtn.addEventListener('click', openCart);
-    closeCartBtn.addEventListener('click', closeCart);
-    cartOverlay.addEventListener('click', closeCart);
-
-    function updateCartUI() {
-      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-      cartCountEl.textContent = totalCount;
-      drawerCountEl.textContent = totalCount;
-
-      if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<p style="text-align:center; color:#94a3b8; margin-top:40px;">目前購物車內尚無咖啡豆。<br>快去挑選您喜愛的手沖產區吧！</p>';
-        cartTotalEl.textContent = 'NT$ 0';
-        return;
-      }
-
-      let totalAmount = 0;
-      let html = '';
-
-      cart.forEach((item, index) => {
-        const itemSubtotal = item.price * item.qty;
-        totalAmount += itemSubtotal;
-        html += `
-          <div class="cart-item">
-            <div class="cart-item-info">
-              <h4>${item.name}</h4>
-              <p>NT$ ${item.price} × ${item.qty}</p>
-            </div>
-            <div style="display:flex; align-items:center; gap:12px;">
-              <span class="cart-item-price">NT$ ${itemSubtotal}</span>
-              <button onclick="removeFromCart(${index})" style="background:none; color:#ef4444; font-size:1.1rem; padding:4px;" title="刪除品項">✕</button>
-            </div>
-          </div>
-        `;
+    // Copy Promo Coupon
+    function copyCoupon() {
+      navigator.clipboard.writeText("KUROMI88").then(() => {
+        const btn = document.getElementById('copyPromoBtn');
+        btn.innerText = "已複製！";
+        triggerToast("🎉 優惠碼 KUROMI88 已複製到剪貼簿！結帳立折 $50！");
+        setTimeout(() => {
+          btn.innerText = "複製代碼";
+        }, 2000);
+      }).catch(() => {
+        triggerToast("代碼：KUROMI88 (結帳輸入立折 $50)");
       });
-
-      cartItemsContainer.innerHTML = html;
-      cartTotalEl.textContent = 'NT$ ' + totalAmount.toLocaleString();
     }
 
-    function addToCart(name, price) {
-      const existing = cart.find(item => item.name === name);
+    // Add To Cart
+    function addToCart(title, price, category) {
+      const existing = cart.find(item => item.title === title);
       if (existing) {
         existing.qty += 1;
       } else {
-        cart.push({ name, price, qty: 1 });
+        cart.push({
+          title: title,
+          price: price,
+          category: category,
+          qty: 1
+        });
       }
       updateCartUI();
-      showToast(`已將「${name}」加入購物車！`);
+      triggerToast(`💜 已將「${title}」加入購物車！`);
     }
 
-    function removeFromCart(index) {
-      const removed = cart.splice(index, 1);
+    // Update Quantity
+    function changeQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
       updateCartUI();
-      showToast(`已將「${removed[0].name}」移出購物車`);
     }
 
-    function checkoutAction() {
+    // Remove Item
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    // Render Cart
+    function updateCartUI() {
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      cartBadgeCount.innerText = totalCount;
+      cartTotalAmount.innerText = `NT$ ${totalPrice.toLocaleString()}`;
+
       if (cart.length === 0) {
-        alert('購物車是空的，請先挑選喜歡的咖啡豆！');
+        cartItemsList.innerHTML = '';
+        cartItemsList.appendChild(emptyCartMsg);
+        emptyCartMsg.style.display = 'block';
+      } else {
+        emptyCartMsg.style.display = 'none';
+        cartItemsList.innerHTML = '';
+
+        cart.forEach((item, index) => {
+          const itemEl = document.createElement('div');
+          itemEl.className = 'cart-item';
+          itemEl.innerHTML = `
+            <div class="cart-item-img">
+              <span style="font-size:1.4rem;">💜</span>
+            </div>
+            <div class="cart-item-details">
+              <div class="cart-item-title">${item.title}</div>
+              <div class="cart-item-price">NT$ ${item.price}</div>
+              <div class="cart-item-qty">
+                <button class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+                <span class="qty-num">${item.qty}</span>
+                <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+              </div>
+            </div>
+            <button class="cart-item-remove" onclick="removeItem(${index})" title="移除">✕</button>
+          `;
+          cartItemsList.appendChild(itemEl);
+        });
+      }
+    }
+
+    // Category Filter
+    function filterCategory(cat, btn) {
+      // Update Tab Styles
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      // Filter Cards
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Checkout Modal
+    function openCheckoutModal() {
+      if (cart.length === 0) {
+        triggerToast("⚠️ 購物車目前是空的，請先挑選商品唷！");
         return;
       }
-      alert('感謝您支持藍天咖啡！系統已為您確認訂單，我們將在 48 小時內新鮮現烘並為您安排宅配寄出。');
-      cart.length = 0;
+      toggleCart(false);
+      checkoutModal.classList.add('active');
+      // Reset cart after checkout
+      cart = [];
       updateCartUI();
-      closeCart();
     }
 
-    // 5. Subscription Form
-    document.getElementById('subscribeForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('userEmail').value;
-      if (email) {
-        showToast('感謝訂閱！首期折扣碼【BLUESKY100】已發送至您的信箱。');
-        document.getElementById('userEmail').value = '';
-      }
-    });
+    function closeCheckoutModal() {
+      checkoutModal.classList.remove('active');
+    }
 
-    // Initialize values
-    updateCalculator();
+    // Countdown Timer (24-hour cycle)
+    function startCountdown() {
+      let now = new Date();
+      let endOfDay = new Date();
+      endOfDay.setHours(23, 59, 59, 999);
+
+      function update() {
+        let diff = endOfDay - new Date();
+        if (diff <= 0) {
+          diff = 86400000;
+        }
+        let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        let mins = Math.floor((diff / (1000 * 60)) % 60);
+        let secs = Math.floor((diff / 1000) % 60);
+
+        document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').innerText = mins.toString().padStart(2, '0');
+        document.getElementById('seconds').innerText = secs.toString().padStart(2, '0');
+      }
+      update();
+      setInterval(update, 1000);
+    }
+    startCountdown();
   </script>
 </body>
 </html>
